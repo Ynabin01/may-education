@@ -20,7 +20,7 @@
         <div class="container">
             <div class="n-content" style="background-color: #F3F6F8;">
                 <br>
-                <div class="title">{{ $normal->caption  }}</div><br>
+                <!-- <div class="title">{{ $normal->caption  }}</div><br> -->
                 <div class="description"> @php echo $normal->short_content; @endphp </div>
                 <br>
                 <img src="{{ $normal->banner_image }}" class="image" style="width: 100%; height: 60%;">

@@ -134,7 +134,7 @@
             </style>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0" style="margin-right: 85px;">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="/" class="nav-item nav-link active">Home</a>
                     
                     
                     @foreach ($menus as $menu)
@@ -152,15 +152,9 @@
                         </div>
                     @endforeach
 
-
-                    
-
-
-
-
-                     
-                    <a href="enquiry.html" class="nav-item nav-link">Enquiry</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+  
+                    <a href="/enquiry" class="nav-item nav-link">Enquiry</a>
+                    <a href="/contact" class="nav-item nav-link">Contact</a>
                     <li class="nav-item">
                         <a href="contact.html" class="nav-link">
                             <i class="fas fa-search"></i>
