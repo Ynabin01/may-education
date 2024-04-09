@@ -135,40 +135,30 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0" style="margin-right: 85px;">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Universities</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                        <div class="dropdown-menu m-0" style="background-color: white;">
-                            <!-- Added inline style for background color -->
-                            <!-- <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="quote.html" class="dropdown-item">Free Quote</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a> -->
+                    
+                    
+                    @foreach ($menus as $menu)
+                        <div class="nav-item @if ($menu->childs->count() > 0) dropdown @endif">
+                            <a href="@if($menu->nav_name=='aboutus' || $menu->nav_name=='notice' || $menu->nav_name=='notice' || $menu->nav_name=='gallery') # @elseif ($menu->nav_name=='news') /{{ $menu->nav_name }}?iam=news @else /{{ $menu->nav_name }} @endif" class="nav-link @if ($menu->childs->count() > 0) dropdown-toggle @endif" @if ($menu->childs->count() > 0) data-bs-toggle="dropdown" @endif>
+                                {{ $menu->caption }}
+                            </a>
+                            @if ($menu->childs->count() > 0 && $menu->id != '2415' && $menu->id != '2537')
+                                <div class="dropdown-menu m-0" style="background-color: white;">
+                                    @foreach ($menu->childs as $sub)
+                                        <a href="/{{ $menu->nav_name }}/{{ $sub->nav_name }}" class="dropdown-item">{{ $sub->caption }}</a>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Abroad Study</a>
-                        <div class="dropdown-menu m-0" style="background-color: white;">
-                            <!-- Added inline style for background color -->
-                            <a href="universities.html" class="dropdown-item">Universities</a>
-                            <a href="study-abroad.html" class="dropdown-item">Study Abroad</a>
-                            <a href="studyabroad.html" class="dropdown-item">Study Abroad 2</a>
-                            <a href="universities-status.html" class="dropdown-item">Universities Status</a>
-                            <a href="uni-details-page.html" class="dropdown-item">Universities Details Page</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Test Preparation</a>
-                        <div class="dropdown-menu m-0" style="background-color: white;">
-                            <!-- Added inline style for background color -->
-                            <a href="ielts.html" class="dropdown-item">IELTS</a>
-                            <a href="toefl.html" class="dropdown-item">TOEFL</a>
-                        </div>
-                    </div>
-                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
-                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                    @endforeach
+
+
+                    
+
+
+
+
+                     
                     <a href="enquiry.html" class="nav-item nav-link">Enquiry</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                     <li class="nav-item">

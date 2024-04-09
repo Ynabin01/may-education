@@ -14,19 +14,19 @@
                         documents, test preparations, visa processing and much more.
                     </div>
                 </div>
-                @if (isset($services))
                 <div class="row g-4" style="margin-left: 0px;">
-                @foreach ($services as $service)
+                    
+                    
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item rounded">
                             <div class="border border-dark rounded" style="padding: 10px;">
-                                <img src="{{ $service->banner_image ?? '' }}" alt="Service Image" class="img-fluid mb-3">
+                                <img src="website/img/about.png" alt="Service Image" class="img-fluid mb-3">
                                 <div
                                     style="width: 100%; color: #3D3D3D; font-size: 16px; font-family: Montserrat; font-weight: 700; line-height: 20px; word-wrap: break-word">
-                                    {{ $service->caption ?? '' }}
+                                    Visa Services
                                 </div>
                                 <div style="font-family: Poppins; color: black; font-size: 14px; text-align: justify;">
-                                {{ $service->short_content ?? '' }}
+                                    Erat ipsum justo amet duo et elitr dolor,diam sed stet lorem.
                                 </div>
                                 <div
                                     style="width: 100%; display: flex; justify-content: flex-start; align-items: center; gap: 8px; margin-top: 10px;">
@@ -39,8 +39,9 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
-                @endif    
+                    
+    
+                    
     
                     <!-- Repeat the above code block for the other three service items -->
                 </div>
