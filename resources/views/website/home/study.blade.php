@@ -71,7 +71,7 @@
                     
                                                 <div class="col-lg-6 order-lg-2 order-1" style="margin-top: 80px">
                                                     <div
-                                                        style="width: 100%; color: #212529; font-size: 24px; font-family: Montserrat; font-weight: 500; line-height: 31.20px; margin-top: -45px; word-wrap: break-word">
+                                                        style="margin-bottom: 14px; width: 100%; color: #212529; font-size: 24px; font-family: Montserrat; font-weight: 500; line-height: 31.20px; margin-top: -45px; word-wrap: break-word">
                                                         {{-- Why Australia could be better destiny for your education --}}
                                                         {{$subsub->long_content}}
                                                     </div>
@@ -79,9 +79,9 @@
                                                         style="max-width: 100%; word-wrap: break-word; color: #3d3d3d; font-size: 14px; font-family: Outfit; font-weight: 400; line-height: 30px;">
                                                         @foreach ($subsub->childs->sortByDesc('updated_at') as $subsubsub)
                                                         
-                                                            <div style="display: flex; align-items: center; gap: 8px">
+                                                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; ">
                                                                 <div
-                                                                    style="margin-top: -27px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
+                                                                    style=" width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
                                                                     <div
                                                                         style="width: 12px; height: 12px; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
                                                                         <span
@@ -125,6 +125,12 @@
                                                         </div> --}}
                     
                                                         <!-- Repeat the same structure for other points -->
+                                                        <div class="unique-button"
+                                                            style="background-color:#CF1312; height: 30px; width: 110px; display: flex; justify-content: center; align-items: center;">
+                                                            <a href="#" class="unique-learn-more" style="color: white;">Explore More</a>
+                                                            <div class="unique-icon" style="color: white;">&rarr;</div>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                     

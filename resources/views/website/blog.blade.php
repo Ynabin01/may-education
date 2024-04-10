@@ -42,10 +42,6 @@
                 </div>
             </div>
             <div class=" col-md-8">
-
-               
-    
-
                 <div class="mb-5 row" >
                     <div class="item media ">
                         <div class="item-with-shadow media">
