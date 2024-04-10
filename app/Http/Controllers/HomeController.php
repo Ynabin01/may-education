@@ -113,13 +113,21 @@ class HomeController extends Controller
         else{
             $offers = null;
         }
-        if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%services%")->where('page_type','Group')->latest()->first()!=null){
-            $services_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%services%")->where('page_type','Group')->latest()->first()->id;
-            $services = Navigation::query()->where('parent_page_id',$services_id)->latest()->get();
-            //return $partners;
+        if(Navigation::query()->where('nav_category','Main')->where('nav_name', 'LIKE', "%services%")->where('page_type','Group')->latest()->first()!=null){
+            $services_id = Navigation::query()->where('nav_category','Main')->where('nav_name', 'LIKE', "%services%")->where('page_type','Group')->latest()->first()->id;
+            $services = Navigation::query()->where('id',$services_id)->latest()->first();
+            // return $services;
         }
         else{
             $services = null;
+        }
+        if(Navigation::query()->where('nav_category','Main')->where('nav_name', 'LIKE', "%study-abroad-page%")->where('page_type','Group')->latest()->first()!=null){
+            $abroad_id = Navigation::query()->where('nav_category','Main')->where('nav_name', 'LIKE', "%study-abroad-page%")->where('page_type','Group')->latest()->first()->id;
+            $abroad = Navigation::query()->where('parent_page_id',$abroad_id)->latest()->get();
+            // return $abroad;
+        }
+        else{
+            $abroad = null;
         }
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%projectlist%")->where('page_type','Group')->latest()->first()!=null){
             $projectlist_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%projectlist%")->where('page_type','Group')->latest()->first()->id;
@@ -185,7 +193,7 @@ class HomeController extends Controller
     
         $global_setting = GlobalSetting::all()->first(); 
         //return $missons;       
-        return view("website.index")->with(['projectlist'=>$projectlist, 'partners'=>$partners,'offers'=>$offers,'benefits'=>$benefits,'vacancy'=>$vacancy,'pricingplan'=>$pricingplan,'features'=>$features,'vision'=>$vision,'goal'=>$goal,'services'=>$services,'newsbanner'=>$newsbanner,'job_categories'=>$job_categories,'testimonial'=>$testimonial,'statistics'=>$statistics,'banners'=>$banners, 'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders,'missons'=>$missons,'message'=>$message,'jobs'=>$jobs]);
+        return view("website.index")->with(['projectlist'=>$projectlist, 'partners'=>$partners,'offers'=>$offers,'benefits'=>$benefits,'vacancy'=>$vacancy,'pricingplan'=>$pricingplan,'features'=>$features,'vision'=>$vision,'goal'=>$goal,'services'=>$services,'newsbanner'=>$newsbanner,'job_categories'=>$job_categories,'testimonial'=>$testimonial,'statistics'=>$statistics,'banners'=>$banners, 'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders,'missons'=>$missons,'message'=>$message,'jobs'=>$jobs,'abroad'=>$abroad]);
     }
 
 
