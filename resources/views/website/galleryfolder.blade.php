@@ -17,31 +17,32 @@
 
     <!-- Navbar & Hero End -->
     <div class="container-xxl py-6">
-    @if (isset($photos))
+ 
         <div class="container">
             <div class="gallery-container">
                 <div class="gallery-items">
-                    @foreach ($photos as $photo)
+                 
                     <div class="gallery-item">
-                        <a href="#">
-                            <img src="{{ $photo->banner_image ?? '' }}" alt="">
-                            <div class="info">
-                                <div class="g-title">{!! htmlspecialchars_decode($photo->caption ?? '') !!}</div>
-                                <div class="details">
-                                    <div class="info-item">{!! htmlspecialchars_decode($photo->long_content ?? '') !!}</div>
-                                    <div class="separator">•</div>
-                                    <div class="info-item">{!! htmlspecialchars_decode($photo->long_content ?? '') !!}</div>
-                                </div>
+                    <a href="#">
+                        <img src="/website/img/about.PNG" alt="">
+                        <div class="info">
+                            <div class="g-title">Seminar 2023</div>
+                            <div class="details">
+                                <div class="info-item">5 Pictures</div>
+                                <div class="separator">•</div>
+                                <div class="info-item">Jan 27,2023</div>
                             </div>
-                        </a>   
+                        </div>
+                    </a>   
                     </div>
-                    @endforeach
+
+                    <!-- End repeat -->
+                    <!-- Add more gallery items here -->
                 </div>
             </div>
         </div>
-    @endif    
-</div>
-
+   
+    </div>
     <!-- Normal Start -->
 
     <!-- Normal End -->
