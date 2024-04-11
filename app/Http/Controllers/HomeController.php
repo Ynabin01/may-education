@@ -485,9 +485,6 @@ class HomeController extends Controller
                 else if(Navigation::all()->where('nav_name',$submenu)->where('page_type','Projectdetails')->count()>0){
                     $subcategory_type = Navigation::all()->where('nav_name',$submenu)->where('page_type','Projectdetails')->first()->page_type;//slug/slug2(except group)
                 }
-
-
-
                 
                 else{
                     
@@ -565,7 +562,6 @@ class HomeController extends Controller
             return view("website.messagechairman")->with([ 'messagechairman'=>$messagechairman,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
         }
 
-        
         elseif($subcategory_type == "Team"){
                 
             $team = Navigation::find($subcategory_id);
@@ -574,9 +570,9 @@ class HomeController extends Controller
         }
         elseif($subcategory_type == "Group"){   
             
-            $team = Navigation::find($subcategory_id);
+            $photos = Navigation::find($subcategory_id);
             // return $normal;
-            return view("website.team")->with(['team'=>$team,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
+            return view("website.galleryfolder")->with(['photos'=>$photos,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
         }
     
         elseif($subcategory_type == "Group"){

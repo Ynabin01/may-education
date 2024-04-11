@@ -52,14 +52,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="website/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="website/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/website/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/website/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="website/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/website/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="website/css/style.css" rel="stylesheet">
+    <link href="/website/css/style.css" rel="stylesheet">
     
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
     <!-- <link href="css/maxcdn.css" rel="stylesheet"> -->
@@ -135,7 +135,6 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0" style="margin-right: 85px;">
                     <a href="/" class="nav-item nav-link active">Home</a>
-                    
                     
                     @foreach ($menus as $menu)
                         <div class="nav-item @if ($menu->childs->count() > 0) dropdown @endif">
@@ -310,16 +309,18 @@
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="website/lib/wow/wow.min.js"></script>
-        <script src="website/lib/easing/easing.min.js"></script>
-        <script src="website/lib/waypoints/waypoints.min.js"></script>
-        <script src="website/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="/website/lib/wow/wow.min.js"></script>
+        <script src="/website/lib/easing/easing.min.js"></script>
+        <script src="/website/lib/waypoints/waypoints.min.js"></script>
+        <script src="/website/lib/owlcarousel/owl.carousel.min.js"></script>
         <!-- Font Awesome CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
         <!-- Template Javascript -->
-        <script src="website/js/main.js"></script>
-
+        <script src="/website/js/main.js"></script>
+       
+    
+ 
     </body>
 
     </html>

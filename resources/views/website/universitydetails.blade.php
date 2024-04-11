@@ -3,7 +3,7 @@
 
     <!-- breadcrumb start -->
         <div class="container-xxl bg-primary page-header"
-            style="background-image: url('img/public/xx.jpg'); background-size: cover; background-position: center;">
+            style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
             <div class="container">
                 <div class="bread-container">
                     <div>Home</div>
