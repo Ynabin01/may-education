@@ -1,5 +1,4 @@
 @extends("layouts.master")
-
 @section('content')
     <!-- Hero Start -->
     <div class="container-fluid bg-primary py-5 hero-header mb-5">

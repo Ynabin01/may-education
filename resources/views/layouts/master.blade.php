@@ -151,12 +151,10 @@
                             @endif
                         </div>
                     @endforeach
-
-  
                     <a href="/enquiry" class="nav-item nav-link">Enquiry</a>
                     <a href="/contact" class="nav-item nav-link">Contact</a>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="fas fa-search"></i>
                         </a>
                     </li>

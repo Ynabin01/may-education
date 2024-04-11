@@ -1,19 +1,18 @@
 @extends("layouts.master")
-
 @section('content')
 
        <!-- breadcrumb start -->
        <div class="container-xxl bg-primary page-header"
-    style="background-image: url('img/public/xx.jpg'); background-size: cover; background-position: center;">
-        <div class="container">
-            <div class="bread-container">
-                <div>Home</div>
-                <div class="divider"> / </div>
-                <div>blog Details</div>
+            style="background-image: url('img/public/xx.jpg'); background-size: cover; background-position: center;">
+            <div class="container">
+                <div class="bread-container">
+                    <div>Home</div>
+                    <div class="divider"> / </div>
+                    <div>blog Details</div>
+                </div>
+                <div class="b-title">Blog Details</div>
             </div>
-            <div class="b-title">Blog Details</div>
         </div>
-    </div>
     <!-- breadcrumb end -->
 
     <!--  blog-details Start -->
@@ -135,7 +134,6 @@
         </div>
     </div>
 
-    
     <style>
         .social-icons {
             /* position: fixed; */
