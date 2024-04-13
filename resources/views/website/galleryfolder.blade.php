@@ -22,7 +22,7 @@
             <div class="gallery-items">
                 @foreach ($photos as $photo)
                 <div class="gallery-item">
-                    <a href="{{ route('GOTOGALLERY', $photo->nav_name) }}">
+                       <a href="{{ route('GOTOGALLERY', $photo->nav_name) }}">
                         <img src="{{ $photo->banner_image }}" alt="">
                         <div class="info">
                             <div class="g-title">{{ $photo->caption }}</div>
