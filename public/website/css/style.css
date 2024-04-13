@@ -23,6 +23,13 @@
 
 }
 
+.logo-center{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media(max-width:1075px) {
     .blog-home {
         height: auto !important;

@@ -167,14 +167,21 @@
                     
                     @foreach ($menus as $menu)
                         <div class="nav-item @if ($menu->childs->count() > 0) dropdown @endif">
-                            <a href="@if($menu->nav_name=='aboutus' || $menu->nav_name=='notice' || $menu->nav_name=='notice' || $menu->nav_name=='gallery') # @elseif ($menu->nav_name=='news') /{{ $menu->nav_name }}?iam=news @else /{{ $menu->nav_name }} @endif" class="nav-link @if ($menu->childs->count() > 0) dropdown-toggle @endif" @if ($menu->childs->count() > 0) data-bs-toggle="dropdown" @endif>
+                            <a href="@if($menu->nav_name=='aboutus' || $menu->nav_name=='notice' || $menu->nav_name=='notice' || $menu->nav_name=='gallery') # @elseif ($menu->nav_name=='news') /{{ $menu->nav_name }}?iam=news @else /{{ $menu->nav_name }} @endif" class="nav-link @if ($menu->childs->count() > 0 && $menu->id != '2752') dropdown-toggle @endif" @if ($menu->childs->count() > 0 && $menu->id != '2752') data-bs-toggle="dropdown" @endif>
                                 {{ $menu->caption }}
                             </a>
-                            @if ($menu->childs->count() > 0 && $menu->id != '2415' && $menu->id != '2537')
+                            @if ($menu->childs->count() > 0 && $menu->id != '2415' && $menu->id != '2537' && $menu->id != '2752')
                                 <div class="dropdown-menu m-0" style="background-color: white;">
-                                    @foreach ($menu->childs as $sub)
-                                        <a href="/{{ $menu->nav_name }}/{{ $sub->nav_name }}" class="dropdown-item">{{ $sub->caption }}</a>
-                                    @endforeach
+                                    @if ($menu->id != '2753')
+                                        @foreach ($menu->childs as $sub)
+                                            <a href="/{{ $menu->nav_name }}/{{ $sub->nav_name }}" class="dropdown-item">{{ $sub->caption }}</a>
+                                        @endforeach
+                                    @else
+                                        @php $subpage = $menu->childs->first() @endphp
+                                        @foreach ($subpage->childs as $sub)
+                                            <a href="/{{ $menu->nav_name }}/{{ $sub->nav_name }}" class="dropdown-item">{{ $sub->caption }}</a>
+                                        @endforeach
+                                    @endif
                                 </div>
                             @endif
                         </div>
@@ -213,16 +220,16 @@
         <div class="container-fluid bg-dark text-light footer pt-3 wow fadeIn" data-wow-delay="0.1s"
         style="margin-top: 3rem; background-color: #F6F6F6;">
         <div class="container py-3 ">
-            <div class="row" style="align-items: center;">
+            <div class="row" style="align-items: center; justify-content: center;">
 
                 <div class="col-md-0 col-lg-1">
                 </div>
-                <div class="col-md-6 col-lg-4 f-ll mb-3 logo-link">
+                <div class="col-md-6 col-lg-4 f-ll mb-3 logo-link logo-center">
                     <div class="f-logo">
                     <img src="/uploads/icons/{{ $global_setting->site_logo }}" class="img-fluid" alt="Logo"
                         style="margin-bottom: 15px; margin-left: 25px; height: 60px; width: 150px;">
                     </div>
-                        <div class="q-links">
+                        <div class="q-links" style="text-align: center;">
                             <div style=" margin-bottom: 15px; max-width: none; width: 100%; color: #212529; font-size: 14px; font-family: Montserrat; font-weight: 600; line-height: 18px; word-wrap: break-word; margin-bottom: 8px;">
                                 Quick Links</div>
                                 <a href="#"
@@ -241,9 +248,9 @@
                                     Form</a>
                         </div>                    
                 </div>
-                <div class="col-md-6 col-lg-3 timing-res">
+                <div class="col-md-6 col-lg-3 timing-res" style="    width: 53%;">
                     <div class="footer-timing"
-                        style="margin-bottom: 15px; width: 100%;  flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px;">
+                        style="margin-bottom: 15px; width: 100%;  flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px;  margin-bottom: 8px;">
                         <div
                             style="align-self: stretch;margin-bottom: 12px; height: 75px; border-radius: 4px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
                             <div
@@ -348,7 +355,28 @@
         <!-- Template Javascript -->
         <script src="/website/js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const questions = document.querySelectorAll('.question');
     
+                questions.forEach(function (question) {
+                    question.addEventListener('click', function () {
+                        const answer = this.nextElementSibling;
+                        if (answer.style.display === 'block') {
+                            answer.style.display = 'none';
+                            this.querySelector('.arrow').textContent = '\u25BC'; // Unicode for down arrow
+                        } else {
+                            answer.style.display = 'block';
+                            this.querySelector('.arrow').textContent = '\u25B2'; // Unicode for up arrow
+                        }
+                    });
+                });
+            });
+    
+    
+    
+    
+        </script>
  
     </body>
 

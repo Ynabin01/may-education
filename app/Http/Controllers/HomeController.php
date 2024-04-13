@@ -241,6 +241,14 @@ class HomeController extends Controller
         else{
             $message = null;
         }
+        if(Navigation::query()->where('nav_category','Main')->where('nav_name', 'LIKE', "%services%")->where('page_type','Group')->latest()->first()!=null){
+            $services_id = Navigation::query()->where('nav_category','Main')->where('nav_name', 'LIKE', "%services%")->where('page_type','Group')->latest()->first()->id;
+            $services = Navigation::query()->where('id',$services_id)->latest()->first();
+            // return $services;
+        }
+        else{
+            $services = null;
+        }
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%process%")->where('page_type','Group')->latest()->first()!=null){
             $process_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%process%")->where('page_type','Group')->latest()->first()->id;
             $process = Navigation::query()->where('parent_page_id',$process_id)->latest()->get();
@@ -316,8 +324,13 @@ class HomeController extends Controller
             // return $notice_heading;
             return view("website.notice")->with(['notices'=>$notices,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
         }
+        elseif($menu == "services"){
+            // return "hlo";
+            return view("website.mainservice")->with(['services'=>$services, 'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>""]);
+
+        }
         elseif($category_type == "Normal"){
-            //return $category_id;
+            // return $category_id;
             $normal = Navigation::find($category_id);
             return view("website.normal")->with(['normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1]);
         }
@@ -435,6 +448,10 @@ class HomeController extends Controller
         // $slug1 = $slug1;
         // $slug2 = $submenu;
         //
+        if($slug1->id == '2753'){
+            return view("website.study-abroad")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);
+
+        }
         if(Navigation::all()->where('nav_name',$submenu)->count()>0){
             $subcategory_id = Navigation::all()->where('nav_name',$submenu)->first()->id;
             if(Navigation::all()->where('parent_page_id',$subcategory_id)->count()>0){

@@ -25,9 +25,9 @@
             </div>
             
             <div class="homestudy-list nav" id="myTab" role="tablist">
-                @foreach ($abroad->sortByDesc('updated_at') as $sub)
-                    <a href="#abroad{{$sub->id}}" data-bs-toggle="tab" data-bs-target="#abroad{{$sub->id}}" class="homestudy-item active" style=" color: black; text-decoration: none;">
-                        <div class="homestudy-name active">{{$sub->caption}}</div>
+                @foreach ($abroad->sortBy('updated_at') as $sub)
+                    <a href="abroad{{$sub->id}}" data-bs-toggle="tab" data-bs-target="#abroad{{$sub->id}}" class="homestudy-item  @if ($loop->iteration == 1)active @endif" style=" color: black; text-decoration: none;">
+                        <div class="homestudy-name @if ($loop->iteration == 1)active @endif">{{$sub->caption}}</div>
                     </a>
                 @endforeach
                 {{-- <a href="#Germany" data-bs-toggle="tab" data-bs-target="#Germany" class="homestudy-item" style=" color: black; text-decoration: none;">
@@ -49,20 +49,20 @@
 
             </div>
             <div class="tab-content">
-                @foreach ($abroad->sortByDesc('updated_at') as $sub)
-                    @foreach ($sub->childs->sortByDesc('updated_at') as $subsub)
-
+                @php $innerIteration = 0; @endphp
+                @foreach ($abroad->sortBy('updated_at') as $sub)
+                    @php $innerIteration++; @endphp
+                    @foreach ($sub->childs->sortBy('updated_at') as $subsub)
                         @if($subsub->short_content == "show-index")
-
-                            <div id="#abroad{{$sub->id}}" class="tab-pane @if ($loop->iteration == 1)active @endif">
-                                <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s"
+                            <div id="abroad{{$sub->id}}" class="tab-pane @if ($innerIteration == 1)active @endif">
+                                <div class="container-fluid py-5 fadeInUp" data-wow-delay="0.1s"
                                     style="margin-top: 20px; margin-bottom: -60px;">
                                     <div class="container" style="margin-bottom: 40px;">
                                         <div class="row g-5">
                                             <div class="row">
                                                 <div class="col-lg-6 order-lg-1 order-2" style="margin-top: 24px">
                                                     <div class="position-relative h-100">
-                                                        <img class="wow zoomIn img-fluid" data-wow-delay="0.9s" src="website/img/public/R.jpeg"
+                                                        <img class="zoomIn img-fluid" data-wow-delay="0.1s" src="{{$subsub->banner_image ?? ''}}"
                                                             alt="Surgical Masks Image"
                                                             style="width: 90%; height: auto; margin-bottom: 20px; display: block; max-width: 100%; position: relative; right: 0;" />
 
@@ -139,7 +139,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         @endif
                     @endforeach
                 @endforeach
