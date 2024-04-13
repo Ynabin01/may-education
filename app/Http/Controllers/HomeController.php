@@ -303,6 +303,12 @@ class HomeController extends Controller
             // return $normal->childs;
             return view("website.Project")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
         }
+        
+        if($category_type == "Photo Gallery"){
+            //return "return to page gallary";
+            $photos = Navigation::query()->where('parent_page_id',$category_id)->where('page_status','1')->latest()->get();
+            return view("website.galleryfolder")->with(['photos'=>$photos,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
+        }
         elseif($category_type == "Notice"){
             // return "return to view Notice";
             $notices = Navigation::query()->where('parent_page_id',$category_id)->latest()->get();
@@ -450,6 +456,13 @@ class HomeController extends Controller
 
                 
             }
+            if(Navigation::all()->where('parent_page_id',$subcategory_id)->count()>0){
+                $subcategory_type = Navigation::all()->where('parent_page_id',$subcategory_id)->first()->page_type;//slug/slug2(GROUP)
+                if($subcategory_type == "Photo Gallery"){
+                    $photos = Navigation::query()->where('parent_page_id',$subcategory_id)->latest()->get();
+                    return view("website.galleryfolder")->with(['photos'=>$photos,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);
+                }
+            }
             if(Navigation::all()->where('nav_name',$submenu)->where('page_type','Group Jobcategory')->count()>0){
                 $subcategory_type = Navigation::all()->where('nav_name',$submenu)->first()->page_type;//slug/slug2(group)
              }
@@ -504,7 +517,7 @@ class HomeController extends Controller
              $subcategory_type = null;
          }
          
-        if($subcategory_type == "Photo Gallery"){
+         if($subcategory_type == "Photo Gallery"){
             // return "return to page gallary";
            
             $photos = NavigationItems::query()->where('navigation_id',$subcategory_id)->latest()->get();

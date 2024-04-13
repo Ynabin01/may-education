@@ -1,3 +1,30 @@
+@php
+    $normal_gallary_notice = App\Models\Navigation::query()
+        ->where('nav_category', 'Main')
+        ->where('page_type', 'Normal')
+        ->where('page_type', 'Photo Gallery')
+    
+        ->orderBy('position', 'ASC')
+        ->get();
+    
+    $menus = App\Models\Navigation::query()
+        ->where('nav_category', 'Main')
+        ->where('page_type', '!=', 'Photo Gallery')
+        ->where('page_type', '!=', 'Notice')
+        ->where('parent_page_id', 0)
+        ->where('page_status', '1')
+        ->orderBy('position', 'ASC')
+        ->get();
+    $global_setting = App\Models\GlobalSetting::all()->first();
+    if (isset($normal)) {
+        $seo = $normal;
+    } elseif (isset($job)) {
+        $seo = $job;
+    }
+    
+@endphp
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +87,9 @@
 
     <!-- Template Stylesheet -->
     <link href="/website/css/style.css" rel="stylesheet">
-    
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
     <!-- <link href="css/maxcdn.css" rel="stylesheet"> -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -318,7 +347,7 @@
 
         <!-- Template Javascript -->
         <script src="/website/js/main.js"></script>
-       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     
  
     </body>

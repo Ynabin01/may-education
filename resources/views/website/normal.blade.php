@@ -9,9 +9,9 @@
             <div class="bread-container">
                 <div>Home</div>
                 <div class="divider"> / </div>
-                <div>about</div>
+                <div>{{$slug1->caption ?? $slug1 }} </div>
             </div>
-            <div class="b-title">About</div>
+            <div class="b-title">{{$slug2->caption ?? $slug2 }}</div>
         </div>
     </div>
     <!-- breadcrumb end -->
