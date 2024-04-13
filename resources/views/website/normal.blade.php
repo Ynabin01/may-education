@@ -11,7 +11,7 @@
                 <div class="divider"> / </div>
                 <div>{{$slug1->caption ?? $slug1 }} </div>
             </div>
-            <div class="b-title">{{$slug2->caption ?? $slug2 }}</div>
+            <div class="b-title">{{$slug1->caption ?? $slug1 }}</div>
         </div>
     </div>
     <!-- breadcrumb end -->
