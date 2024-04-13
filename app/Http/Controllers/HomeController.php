@@ -323,6 +323,21 @@ class HomeController extends Controller
             return view("website.mainservice")->with(['services'=>$services, 'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>""]);
 
         }
+        elseif($menu == "enquiry"){
+            // return "hlo";
+            return view("website.enquiry")->with(['services'=>$services, 'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>""]);
+
+        }
+        elseif($menu == "blog"){
+            // return "hlo";
+            return view("website.blog")->with(['services'=>$services, 'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>""]);
+
+        }
+        elseif($menu == "universities"){
+            // return "hlo";
+            return view("website.universities")->with(['services'=>$services, 'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>""]);
+
+        }
         elseif($category_type == "Normal"){
             // return $category_id;
             $normal = Navigation::find($category_id);
