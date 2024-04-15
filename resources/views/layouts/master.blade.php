@@ -1,64 +1,15 @@
-@php
-    $normal_gallary_notice = App\Models\Navigation::query()
-        ->where('nav_category', 'Main')
-        ->where('page_type', 'Normal')
-        ->where('page_type', 'Photo Gallery')
-    
-        ->orderBy('position', 'ASC')
-        ->get();
-    
-    $menus = App\Models\Navigation::query()
-        ->where('nav_category', 'Main')
-        ->where('page_type', '!=', 'Photo Gallery')
-        ->where('page_type', '!=', 'Notice')
-        ->where('parent_page_id', 0)
-        ->where('page_status', '1')
-        ->orderBy('position', 'ASC')
-        ->get();
-    $global_setting = App\Models\GlobalSetting::all()->first();
-    if (isset($normal)) {
-        $seo = $normal;
-    } elseif (isset($job)) {
-        $seo = $job;
-    }
-    
-@endphp
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
-
-<title>{{ $seo->page_titile ?? $global_setting->page_title }}</title>
-  <meta name="title" content="{{ $seo->page_titile ?? $global_setting->page_title }}">
-  <meta name="description" content="{{ $seo->page_description ?? $global_setting->page_description }}">
-  <meta name="keywords" content="{{ $seo->page_keyword ?? $global_setting->page_keyword }}">
-  <meta name="robots" content="index, follow">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="language" content="English">
-  <meta name="revisit-after" content="1 days">
-  <meta name="author" content="{{ $global_setting->site_name ?? '' }}">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ $global_setting->website_full_address ?? '' }}">
-  <meta property="og:title" content="{{ $seo->page_title ?? $global_setting->page_title }}">
-  <meta property="og:description" content="{{ $seo->page_description ?? $global_setting->page_description }}">
-  <meta property="og:image" content="{{ $seo->banner_image ?? '/uploads/icons/' . $global_setting->site_logo }}">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="{{ $global_setting->website_full_address ?? '' }}">
-  <meta property="twitter:title" content="{{ $seo->page_title ?? $global_setting->page_title }}">
-  <meta property="twitter:description" content="{{ $seo->page_description ?? $global_setting->page_description }}">
-  <meta property="twitter:image" content="{{ $seo->banner_image ?? '/uploads/icons/' . $global_setting->site_logo }}">
-
-  <!-----END SEO------->
+    <meta charset="utf-8">
+    <title>May - Edu. Cont.</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="/uploads/icons/{{ $global_setting->site_logo }}" rel="icon">
+    <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,9 +34,7 @@
 
     <!-- Template Stylesheet -->
     <link href="/website/css/style.css" rel="stylesheet">
-   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-
+    
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
     <!-- <link href="css/maxcdn.css" rel="stylesheet"> -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -103,7 +52,12 @@
                                 href="tel:+977 01-4240108" style="color: black;">+977 01-4240108</a></span>
                     </p>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6 text-right d-none d-sm-block v-social-text-align">
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right d-none d-sm-block v-social-text-align f-links" style="
+                display: flex !important;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+            ">
                     <div class="top-bar-social v-social" style="display: inline-block; ">
                         <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"
                                 style="margin-right: 10px;"></i></a>
@@ -235,7 +189,7 @@
                                     Form</a>
                         </div>                    
                 </div>
-                <div class="col-md-6 col-lg-3 timing-res" style="    width: 53%;">
+                <div class="col-md-6 col-lg-3 timing-res" style="">
                     <div class="footer-timing"
                         style="margin-bottom: 15px; width: 100%;  flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px;  margin-bottom: 8px;">
                         <div

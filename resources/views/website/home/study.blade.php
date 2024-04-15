@@ -62,7 +62,7 @@
                                             <div class="row">
                                                 <div class="col-lg-6 order-lg-1 order-2" style="margin-top: 24px">
                                                     <div class="position-relative h-100">
-                                                        <img class="zoomIn img-fluid" data-wow-delay="0.1s" src="{{$subsub->banner_image ?? ''}}"
+                                                        <img class="zoomIn img-fluid study-img" data-wow-delay="0.1s" src="{{$subsub->banner_image ?? ''}}"
                                                             alt="Surgical Masks Image"
                                                             style="width: 90%; height: auto; margin-bottom: 20px; display: block; max-width: 100%; position: relative; right: 0;" />
 
@@ -79,8 +79,8 @@
                                                         style="max-width: 100%; word-wrap: break-word; color: #3d3d3d; font-size: 14px; font-family: Outfit; font-weight: 400; line-height: 30px;">
                                                         @foreach ($subsub->childs->sortByDesc('updated_at') as $subsubsub)
                                                         
-                                                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; ">
-                                                                <div
+                                                            <div  class="left-icon-main" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; ">
+                                                                <div class="left-icon"
                                                                     style=" width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
                                                                     <div
                                                                         style="width: 12px; height: 12px; border-radius: 50%; display: flex; justify-content: center; align-items: center;">

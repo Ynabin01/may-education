@@ -26,7 +26,6 @@
 .logo-center{
     display: flex;
     justify-content: space-evenly;
-    flex-direction: column;
     align-items: center;
 }
 
@@ -62,10 +61,30 @@
         /* justify-content: unset !important; */
         width: 70%;
     }
+
+    .f-ll{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .logo-center{
+    flex-direction: column;
+
+    }
+}
+
+@media(min-width:768px) and (max-width:991px){
+    .timing-res{
+        /* justify-content: unset !important; */
+        width: 53%;
+    }
+
 }
 
 
-@media(max-width:374px) {
+
+@media(max-width:426px) {
     .custom-images-container img {
         max-width: unset !important;
         width: 160px !important;
@@ -82,7 +101,25 @@
     .aus-abroad {
         padding-left: 35px;
     }
+    .left-icon-main{
+        align-items: unset !important;
+    }
 
+    .left-icon{
+        margin-top: 7px;
+    }
+
+    .unique-learn-more {
+        font-size: 12px !important;
+        margin-right: 4px;
+    }
+
+    .study-img{
+        margin-left: 20px;
+    }
+    .f-links{
+        justify-content: flex-start !important;
+    }
 }
 
 
@@ -116,6 +153,10 @@
 .f-ll {
     display: flex;
     justify-content: space-evenly;
+}
+.f-logo{
+    text-align: center;
+
 }
 
 .timing-res {
@@ -1366,7 +1407,7 @@
 
 @media (max-width: 767px) {
     .homestudy-list {
-        margin-left: -38px;
+        margin-left: -10px;
         margin-bottom: -30px;
     }
 
