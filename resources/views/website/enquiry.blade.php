@@ -15,7 +15,6 @@
             <div class="b-title">Enquiry</div>
         </div>
     </div>
-
     <!-- Navbar & Hero End -->
     <div class="container-xxl py-6" style="background-color: white;">
         <div class="container apply-n">

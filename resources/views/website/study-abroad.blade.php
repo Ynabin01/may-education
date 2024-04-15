@@ -17,7 +17,7 @@
 
     <!-- breadcrumb end -->
 
-    <!-- Universities Start -->
+    <!-- Study-abroad Start -->
     <div class="container-xxl py-6" style="background-color: white;">
         <div class="about-country-a">
             <div class="content">
@@ -247,10 +247,10 @@
     </div>
 
 
-    <!--End Universities Start -->
+    <!--End Study-abroad   -->
 
 
 
         @endsection
 
-    <!-- Blog End -->
+  

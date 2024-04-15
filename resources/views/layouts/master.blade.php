@@ -57,10 +57,6 @@
 
   <!-----END SEO------->
 
-
-   
-  
-
     <!-- Favicon -->
     <link href="/uploads/icons/{{ $global_setting->site_logo }}" rel="icon">
 
@@ -97,41 +93,38 @@
 </head>
 
 <body>
-    <div class="container-xxl bg-white p-0">
-        <div class="container">
+<div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <p style="margin-top: 10px; margin-bottom: 10px;">
-                        <span>&nbsp;<i class="fas fa-envelope text-black"></i> <a href="mailto:{{ $global_setting->site_email }}"
-                                style="color: black;">{{ $global_setting->site_email }}</a></span>
+                        <span>&nbsp;<i class="fas fa-envelope text-black"></i> <a href="mailto:info@may.edu.np"
+                                style="color: black;">info@may.edu.np</a></span>
                         <span style="margin-left: 10px;"><i class="fas fa-phone-alt text-black"></i> <a
-                                href="tel:{{ $global_setting->phone }}" style="color: black;">{{ $global_setting->phone }}</a></span>
+                                href="tel:+977 01-4240108" style="color: black;">+977 01-4240108</a></span>
                     </p>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6 text-right d-none d-sm-block">
-                    <div class="top-bar-social" style="display: inline-block; margin-left: 300px;">
-                        <a href="{{ $global_setting->facebook ?? '' }}" target="_blank"><i class="fab fa-facebook-f"
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right d-none d-sm-block v-social-text-align">
+                    <div class="top-bar-social v-social" style="display: inline-block; ">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"
                                 style="margin-right: 10px;"></i></a>
-                        <a href="{{ $global_setting->twitter ?? '' }}" target="_blank"><i class="fab fa-twitter"
+                        <a href="https://twitter.com/home" target="_blank"><i class="fab fa-twitter"
                                 style="margin-right: 10px;"></i></a>
-                        <a href="{{ $global_setting->insta_link ?? '' }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                     <div class="vertical-line"
                         style="display: inline-block; margin-left: 10px; margin-right: 10px; height: 28px; border-left: 2px solid #000;">
                     </div>
                     <div class="nav-item dropdown" style="display: inline-block;">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                            style="color: black; margin-left: -18px;">Putalisadak Office</a>
+                            style="color: black; margin-left: -18px;">Tinkune Office</a>
                         <div class="dropdown-menu m-0" style="min-width: 100px;"> <!-- Adjust min-width as needed -->
-                            <a href="#" class="dropdown-item" style="color: black;">Tinkne Office</a>
+                            <a href="feature.html" class="dropdown-item" style="color: black;">Koteshwor Office</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-    </div> <!--  end .container -->
+     <!--  end .container -->
     <!-- Navbar & Hero Start -->
     <div class="container-xxl position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-0"
@@ -209,13 +202,7 @@
     <!-- Client Section -->
     <!-- Blog Start -->
     
-    
-    
-    
-    
-    
-    
-    
+
     <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-3 wow fadeIn" data-wow-delay="0.1s"
         style="margin-top: 3rem; background-color: #F6F6F6;">

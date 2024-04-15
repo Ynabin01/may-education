@@ -66,13 +66,12 @@
                                     <!-- <th>Country</th> -->
                                     <!-- <th>Cv</th> -->
                                     <th>Message</th>
-
-                                    <!-- <th>Service</th> -->
-                                    <!-- <th>Doctor</th> -->
-                                    <!-- <th>Date</th> -->
-                                    <!-- <th>Time</th> -->
-                                    {{-- <th>company name</th>z --}}
-                                    {{-- <th>Passport</th> --}}
+                                    <th>Country</th>
+                                    <th>Faculty</th>
+                                    <th>Phone Number</th>
+                                    <th>Education Level</th>
+                                    <th>Have You Done</th>
+                                     <th>Score</th> 
                                 </tr>
                             </thead>
                             <tbody>
@@ -89,7 +88,7 @@
                                     <td>{{$contact->first_name ?? ''}}</td>                                     
                                     <td>{{$contact->subject ?? ''}}</td> 
                                     <td>{{$contact->email ?? ''}}</td>
-                                    <!-- <td>{{$contact->country ?? ''}}</td> -->
+                                     <td>{{$contact->country ?? ''}}</td>  
                                     {{-- cv --}}
                                     <!-- <td style="display: flex; align-items:center">
                                         @if (isset($contact->cv))
@@ -100,11 +99,11 @@
                                         @endif
                                     </td> -->
                                     <td>{{$contact->message ?? ''}}</td>
-
-                                    <!-- <td>{{$contact->subject ?? ''}}</td> -->
-                                    <!-- <td>{{$contact->last_name ?? ''}}</td>
-                                    <td>{{$contact->permanent_address ?? ''}}</td>
-                                    <td>{{$contact->temporary_address ?? ''}}</td> -->
+                                    <td>{{$contact->faculty ?? ''}}</td>  
+                                    <td>{{$contact->contact_number ?? ''}}</td>
+                                    <td>{{$contact->education ?? ''}}</td>
+                                    <td>{{$contact->have_done ?? ''}}</td>  
+                                    <td>{{$contact->score ?? ''}}</td>  
                                     {{-- photo  --}}
                                     {{-- <td style="display: flex; align-items:center">
                                         @if (isset($contact->photo))

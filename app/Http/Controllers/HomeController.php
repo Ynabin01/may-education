@@ -585,6 +585,13 @@ class HomeController extends Controller
             return view("website.normal")->with(['normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
         }
        
+         elseif($subcategory_type == "Group Project"){
+             
+            $universities = Navigation::find($subcategory_id);
+            return view("website.universities")->with(['universities'=>$universities,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
+        }
+       
+
         elseif($subcategory_type == "Message"){
                 
             $messagechairman = Navigation::find($subcategory_id);
@@ -652,6 +659,7 @@ class HomeController extends Controller
         return view("website.normal")->with(['normal'=>$normal,'menus'=>$menus,'global_setting'=>$global_setting,'job_slug'=>$slug]);
     }
 
+
     public function FullStoryRead($slug){
         // return $slug;
         $detailspage = Navigation::where('id',$slug)->first();
@@ -690,7 +698,7 @@ class HomeController extends Controller
         //$job =Navigation::all()->where('nav_name',$slug)->first();        
          $global_setting = GlobalSetting::all()->first(); 
          $menus = Navigation::query()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0)->where('page_status','1')->orderBy('position','ASC')->get();
-         return view("website.appointment")->with(['menus'=>$menus,'global_setting'=>$global_setting,]);
+         return view("website.enquiry")->with(['menus'=>$menus,'global_setting'=>$global_setting,]);
     }
 
     public function AppointmentStore(Request $req)
