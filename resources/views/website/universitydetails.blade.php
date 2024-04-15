@@ -2,41 +2,64 @@
 @section('content')
 
     <!-- breadcrumb start -->
-        <div class="container-xxl bg-primary page-header"
-            style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
-            <div class="container">
-                <div class="bread-container">
-                    <div>Home</div>
-                    <div class="divider"> / </div>
-                    <div>universities details </div>
-                </div>
-                <div class="b-title">Universities Details</div>
+    <div class="container-xxl bg-primary page-header"
+        style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="bread-container">
+                <div>Home</div>
+                <div class="divider"> / </div>
+                <div>{{$slug1->caption ?? $slug1 }}</div>
             </div>
+            <div class="b-title">{{$slug2->caption ?? $slug2 }}</div>
         </div>
+    </div>
     <!-- breadcrumb end -->
+    <?php
+    //$content = "Country:USA<br /> Proficiency Test:IELTS, PTE<br /> Degree: A,B";
+    $content = $slug2->long_content;
+
+    // Split the content by <br /> to separate each part
+    $parts = explode('<br />', $content);
+
+    $result = [];
+    foreach ($parts as $part) {
+        // Split each part by ":" to separate the key and value
+        $pair = explode(':', $part, 2);
+
+        // Trim whitespace from the key and value
+        $key = trim($pair[0]);
+        $value = isset($pair[1]) ? trim($pair[1]) : '';
+
+        // $result[$key] = $value;
+        $result[] = $value;
+    }
+
+    // Now $result contains an associative array with keys "Country", "Proficiency Test", and "Degree"
+    // and their respective values
+    // print_r($result[0]);
+    //Array ( [Country] => USA [Proficiency Test] => IELTS, PTE [Degree] => A,B )
+?>
 
             <!-- Universities Start -->
             <div class="container-xxl py-6" style="background-color: white;">
                 <div class="uni-page-container">
                     <div class="uni-page-content">
                         <div class="uni-page-title">Know More</div>
-                        <div class="uni-page-description">Adelphi graduates stand out from — and often out-earn — their peers.
-                            Our unwavering focus on your success means individualized attention, immersive learning
-                            opportunities, important connections, and award-winning career support.</div>
+                        <div class="uni-page-description">{{$slug2->childs->first()->short_content ?? ""}}</div>
                         <div class="uni-page-info">
                             <div class="uni-page-info-item">
                                 <span class="uni-page-info-label">Country:</span>
-                                <span class="uni-page-info-value">USA</span>
+                                <span class="uni-page-info-value">{{$result[0]}}</span>
                             </div>
                             <div class="uni-page-info-item">
                                 <span class="uni-page-info-label">Proficiency Test:</span>
-                                <span class="uni-page-info-value">IELTS, PTE</span>
-                            </div>
+                                <span class="uni-page-info-value">{{$result[1]}}</span>
+                            </div>  
                         </div>
                     </div>
 
                     <div class="uni-page-image-container">
-                        <img class="uni-page-image" src="img/public/uni-logo.PNG" alt="Adelphi University Logo">
+                        <img class="uni-page-image" src="{{$slug2->banner_image ?? ""}}" alt="Adelphi University Logo">
                     </div>
                 </div>
                 <div class="container">
@@ -46,7 +69,8 @@
                         </div>
                     </div>
                     <div class="uni-page-container uni-page-faculty">
-                        <div class="uni-page-faculty">
+                        {!! htmlspecialchars_decode($slug2->childs->first()->long_content ?? "") !!}
+                        {{-- <div class="uni-page-faculty">
                             <div class="uni-page-faculty-title">Faculty 1</div>
                             <div class="uni-page-faculty-description">In Australia, international students can apply for
                                 permission to work. Students are permitted to work 20 hours a week and full-time during
@@ -68,9 +92,32 @@
                             <div class="uni-page-faculty-title">Faculty 3</div>
                             <div class="uni-page-faculty-description">Student visa applicants from India, Nepal, and Bhutan are
                                 required to undergo a Pre-Visa Assessment (PVA).</div>
-                        </div>
+                        </div> --}}
                     </div>
-                    <div class="uni-page-table">
+                    {{-- <div class="uni-page-table table-responsive">
+                        
+                        <table class="table ">
+                            <thead>
+                              <tr class="table-active">
+                                <th scope="col">Intake</th>
+                                <th scope="col">Deadlines</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td scope="row">September / October</td>
+                                <td>January to May</td>
+                              </tr>
+                              <tr>
+                                <td scope="row">January / February</td>
+                                <td>September to November</td>
+                              </tr>
+                              <tr>
+                                <td scope="row">Rolling Admissions</td>
+                                <td>No Fixed deadline varies by university</td>
+                              </tr>
+                            </tbody>
+                          </table>
                         <div class="uni-page-table-section">
                             <div class="uni-page-table-title">Intake</div>
                             <div class="uni-page-table-content">
@@ -87,7 +134,7 @@
                                 <div class="uni-page-table-item">No fixed deadline; varies by university</div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 @endsection

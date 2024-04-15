@@ -461,6 +461,10 @@ class HomeController extends Controller
             return view("website.study-abroad")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);
 
         }
+        else if($slug1->id == '2751'){
+            return view("website.universitydetails")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);
+
+        }
         if(Navigation::all()->where('nav_name',$submenu)->count()>0){
             $subcategory_id = Navigation::all()->where('nav_name',$submenu)->first()->id;
             if(Navigation::all()->where('parent_page_id',$subcategory_id)->count()>0){
