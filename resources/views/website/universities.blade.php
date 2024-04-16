@@ -19,43 +19,43 @@
     $proficiency = [];
     foreach($slug1->childs as $universities){
         if (isset($universities->long_content)){
-        $content = $universities->long_content; 
-        // $degree_one = $universities->short_content;
-        // print_r($content);
-        // print_r($degree_one);
+            $content = $universities->long_content; 
+            // $degree_one = $universities->short_content;
+            // print_r($content);
+            // print_r($degree_one);
 
-        // Split the content by <br /> to separate each part
-        $parts = explode('<br />', $content);
+            // Split the content by <br /> to separate each part
+            $parts = explode('<br />', $content);
 
-        $i = 0;
-        foreach ($parts as $part) {
-            $i += 1;
-            // Split each part by ":" to separate the key and value
-            $pair = explode(':', $part, 2);
+            $i = 0;
+            foreach ($parts as $part) {
+                $i += 1;
+                // Split each part by ":" to separate the key and value
+                $pair = explode(':', $part, 2);
 
-            // Trim whitespace from the key and value
-            $key = trim($pair[0]);
-            $value = isset($pair[1]) ? trim($pair[1]) : '';
+                // Trim whitespace from the key and value
+                $key = trim($pair[0]);
+                $value = isset($pair[1]) ? trim($pair[1]) : '';
 
-            // $result[$key] = $value;
-            if ($i ==1 ) {
-                $country[] = $value;
-            }
-            elseif ($i==2) {
-                $proficiencys = explode(',', $value);
-                foreach ($proficiencys as $deg) {
-                    $proficiency[] = trim($deg);
+                // $result[$key] = $value;
+                if ($i ==1 ) {
+                    $country[] = $value;
                 }
-            }
-            elseif($i==3){
-                $degrees = explode(',', $value);
-                foreach ($degrees as $deg) {
-                    $degree[] = trim($deg);
+                elseif ($i==2) {
+                    $proficiencys = explode(',', $value);
+                    foreach ($proficiencys as $deg) {
+                        $proficiency[] = trim($deg);
+                    }
                 }
-            }
+                elseif($i==3){
+                    $degrees = explode(',', $value);
+                    foreach ($degrees as $deg) {
+                        $degree[] = trim($deg);
+                    }
+                }
 
+            }
         }
-    }
     }
 
         // Remove duplicates and reindex the arrays
@@ -114,7 +114,8 @@
             <div class="sec-univ-container">
 
                 @foreach($slug1->childs as $universities)
-                    <a href="{{$slug1->nav_name}}/{{$universities->nav_name}}">
+                {{count($universities->childs)}}
+                    <a href="@if (count($universities->childs) != 0) {{$slug1->nav_name}}/{{$universities->nav_name}} @else # @endif">
                         <div class="sec-univ-card">
                             <div class="sec-univ-image">
                                 <img src="{{$universities->banner_image ?? ""}}" alt="University Image">
