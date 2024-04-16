@@ -114,7 +114,6 @@
             <div class="sec-univ-container">
 
                 @foreach($slug1->childs as $universities)
-                {{count($universities->childs)}}
                     <a href="@if (count($universities->childs) != 0) {{$slug1->nav_name}}/{{$universities->nav_name}} @else # @endif">
                         <div class="sec-univ-card">
                             <div class="sec-univ-image">
@@ -122,7 +121,14 @@
                             </div>
                             <div class="sec-univ-details">
                                 <div class="sec-univ-name">{{$universities->caption ?? ""}}</div>
-                                <div class="sec-univ-location">{{$universities->short_content ? explode(':', $universities->short_content)[1] : ""}}</div>
+                                <div class="sec-univ-location">
+                                    {{-- {{$universities->short_content ? explode(':', $universities->short_content)[1] : ""}} --}}
+                                    @php
+                                    $shortContentArray = explode(':', $universities->short_content);
+                                    $location = isset($shortContentArray[1]) ? $shortContentArray[1] : "";
+                                    @endphp
+                                    {{$location}}
+                                </div>
                             </div>
                         </div>
                     </a>
