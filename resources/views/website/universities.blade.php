@@ -121,8 +121,14 @@
                             </div>
                             <div class="sec-univ-details">
                                 <div class="sec-univ-name">{{$universities->caption ?? ""}}</div>
-                                {{$universities->short_content}}
-                                <div class="sec-univ-location">{{$universities->short_content ?? explode(':', $universities->short_content)[1] : ""}}</div>
+                                <div class="sec-univ-location">
+                                    {{-- {{$universities->short_content ? explode(':', $universities->short_content)[1] : ""}} --}}
+                                    @php
+                                    $shortContentArray = explode(':', $universities->short_content);
+                                    $location = isset($shortContentArray[1]) ? $shortContentArray[1] : "";
+                                    @endphp
+                                    {{$location}}
+                                </div>
                             </div>
                         </div>
                     </a>
