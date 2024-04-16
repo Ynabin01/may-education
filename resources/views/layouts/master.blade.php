@@ -142,10 +142,10 @@
                     
                     @foreach ($menus as $menu)
                         <div class="nav-item @if ($menu->childs->count() > 0) dropdown @endif">
-                            <a href="@if($menu->nav_name=='aboutus' || $menu->nav_name=='notice' || $menu->nav_name=='notice' || $menu->nav_name=='gallery') # @elseif ($menu->nav_name=='news') /{{ $menu->nav_name }}?iam=news @else /{{ $menu->nav_name }} @endif" class="nav-link @if ($menu->childs->count() > 0 && $menu->id != '2752' && $menu->id != '2751') dropdown-toggle @endif" @if ($menu->childs->count() > 0 && $menu->id != '2752' && $menu->id != '2751') data-bs-toggle="dropdown" @endif>
+                            <a href="@if($menu->nav_name=='aboutus' || $menu->nav_name=='notice' || $menu->nav_name=='notice' || $menu->nav_name=='gallery') # @elseif ($menu->nav_name=='news') /{{ $menu->nav_name }}?iam=news @else /{{ $menu->nav_name }} @endif" class="nav-link @if ($menu->childs->count() > 0 && $menu->id != '2752' && $menu->id != '2751' && $menu->id != '2756') dropdown-toggle @endif" @if ($menu->childs->count() > 0 && $menu->id != '2752' && $menu->id != '2751' && $menu->id != '2756') data-bs-toggle="dropdown" @endif>
                                 {{ $menu->caption }}
                             </a>
-                            @if ($menu->childs->count() > 0 && $menu->id != '2415' && $menu->id != '2537' && $menu->id != '2752' && $menu->id != '2751')
+                            @if ($menu->childs->count() > 0 && $menu->id != '2415' && $menu->id != '2537' && $menu->id != '2752' && $menu->id != '2751' && $menu->id != '2756')
                                 <div class="dropdown-menu m-0" style="background-color: white;">
                                     @if ($menu->id != '2753')
                                         @foreach ($menu->childs as $sub)
