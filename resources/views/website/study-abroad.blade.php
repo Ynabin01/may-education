@@ -201,14 +201,17 @@
                 <!-- Repeat the same structure for other FAQs -->
             </div>
         </div>
+        @php
+            use App\Models\NavigationItems;
+            if (isset($slug2->childs[4])){
+                $photos = NavigationItems::query()->where('navigation_id',$slug2->childs[4]->id)->latest()->get();
+            }
+        @endphp
+        @if (isset($slug2->childs[4]))
         <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="margin: 0 auto;">
             <div class="container client-logo-study">
                 <div class="title client-logo-study">{{$slug2->childs[4]->caption}}</div>
                 <div class="universities client-logo-study">
-                    @php
-                        use App\Models\NavigationItems;
-                        $photos = NavigationItems::query()->where('navigation_id',$slug2->childs[4]->id)->latest()->get();
-                    @endphp
                     @foreach ($photos as $sub)
                         <!-- Repeat 6 logos -->
                         <div class="university client-logo-study">
@@ -243,6 +246,7 @@
                 </div>
             </div>
         </div>
+        @endif
 
     </div>
 
