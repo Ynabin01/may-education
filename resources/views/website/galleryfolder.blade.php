@@ -20,7 +20,7 @@
     <div class="container">
         <div class="gallery-container">
             <div class="gallery-items">
-                @foreach ($photos as $photo)
+                @foreach ($photos->childs as $photo)
                 <div class="gallery-item">
                        <a href="{{ route('GOTOGALLERY', $photo->nav_name) }}">
                         <img src="{{ $photo->banner_image }}" alt="">

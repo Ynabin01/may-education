@@ -41,89 +41,28 @@
                         </div>
                     </div>
                     <div class=" col-md-8">
-                        <div class="mb-5 row" >
-                            <div class="item media ">
-                                <div class="item-with-shadow media">
-                                    <div class="media-body">
-                                        <div class="meta mb-1"><span class="date">Nov 11, 2021</span></div>
-                                        <h3 class="title mb-1"><a href="blogdetails.html">Heading Lorem Ipsum Dolor Sit Amet</a></h3>
-                                        <div class="intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa....</div>
-                                        <div class="small-button-blog-b">
-                                            <div class="button">News</div>
-                                            <div class="button">Blogs</div>
-                                            <div class="separator"></div>
-                                            <div class="time">5 minute read</div>
-                                        </div>
-                                    </div><!--//media-body-->
-                                    <img class="ml-3 img-fluid post-thumb d-none d-md-block"
-                                        src="assets/images/blog/blog-post-thumb-7.jpg" alt="image">
-                                </div>
-                            </div><!--//media-->
-                        </div><!--//item-->
-
-                        <div class="mb-5 row" >
-                            <div class="item media ">
-                                <div class="item-with-shadow media">
-                                    <div class="media-body">
-                                        <div class="meta mb-1"><span class="date">Nov 11, 2021</span></div>
-                                        <h3 class="title mb-1"><a href="blogdetails.html">Heading Lorem Ipsum Dolor Sit Amet</a></h3>
-                                        <div class="intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa....</div>
-                                        <div class="small-button-blog-b">
-                                            <div class="button">News</div>
-                                            <div class="button">Blogs</div>
-                                            <div class="separator"></div>
-                                            <div class="time">5 minute read</div>
-                                        </div>
-                                    </div><!--//media-body-->
-                                    <img class="ml-3 img-fluid post-thumb d-none d-md-block"
-                                        src="assets/images/blog/blog-post-thumb-7.jpg" alt="image">
-                                </div>
-                            </div><!--//media-->
-                        </div><!--//item-->
-
-                        <div class="mb-5 row" >
-                            <div class="item media ">
-                                <div class="item-with-shadow media">
-                                    <div class="media-body">
-                                        <div class="meta mb-1"><span class="date">Nov 11, 2021</span></div>
-                                        <h3 class="title mb-1"><a href="blogdetails.html">Heading Lorem Ipsum Dolor Sit Amet</a></h3>
-                                        <div class="intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa....</div>
-                                        <div class="small-button-blog-b">
-                                            <div class="button">News</div>
-                                            <div class="button">Blogs</div>
-                                            <div class="separator"></div>
-                                            <div class="time">5 minute read</div>
-                                        </div>
-                                    </div><!--//media-body-->
-                                    <img class="ml-3 img-fluid post-thumb d-none d-md-block"
-                                        src="assets/images/blog/blog-post-thumb-7.jpg" alt="image">
-                                </div>
-                            </div><!--//media-->
-                        </div><!--//item-->
-
-                        <div class="mb-5 row" >
-                            <div class="item media ">
-                                <div class="item-with-shadow media">
-                                    <div class="media-body">
-                                        <div class="meta mb-1"><span class="date">Nov 11, 2021</span></div>
-                                        <h3 class="title mb-1"><a href="blogdetails.html">Heading Lorem Ipsum Dolor Sit Amet</a></h3>
-                                        <div class="intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa....</div>
-                                        <div class="small-button-blog-b">
-                                            <div class="button">News</div>
-                                            <div class="button">Blogs</div>
-                                            <div class="separator"></div>
-                                            <div class="time">5 minute read</div>
-                                        </div>
-                                    </div><!--//media-body-->
-                                    <img class="ml-3 img-fluid post-thumb d-none d-md-block"
-                                        src="assets/images/blog/blog-post-thumb-7.jpg" alt="image">
-                                </div>
-                            </div><!--//media-->
-                        </div><!--//item-->
+                        {{-- {{$slug1}} --}}
+                        @foreach ($slug1->childs as $group_project)
+                            <div class="mb-5 row" >
+                                <div class="item media ">
+                                    <div class="item-with-shadow media">
+                                        <div class="media-body">
+                                            <div class="meta mb-1"><span class="date">{{ \Carbon\Carbon::parse($group_project->updated_at)->format('M d, Y') }}</span></div>
+                                            <h3 class="title mb-1"><a href="blogdetails.html">{{$group_project->caption}}</a></h3>
+                                            <div class="intro">{{$group_project->short_content}}</div>
+                                            <div class="small-button-blog-b">
+                                                <div class="button">News</div>
+                                                <div class="button">Blogs</div>
+                                                <div class="separator"></div>
+                                                <div class="time">5 minute read</div>
+                                            </div>
+                                        </div><!--//media-body-->
+                                        <img class="ml-3 img-fluid post-thumb d-none d-md-block"
+                                            src="/website/assets/images/blog/blog-post-thumb-7.jpg" alt="image">
+                                    </div>
+                                </div><!--//media-->
+                            </div><!--//item-->
+                        @endforeach
 
                         <div class="more" style="text-align: center;">
                             <svg width="117" height="24" viewBox="0 0 117 24" fill="none" xmlns="http://www.w3.org/2000/svg">

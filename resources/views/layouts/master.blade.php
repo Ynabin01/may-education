@@ -1,3 +1,29 @@
+@php
+    $normal_gallary_notice = App\Models\Navigation::query()
+        ->where('nav_category', 'Main')
+        ->where('page_type', 'Normal')
+    
+        ->orderBy('position', 'ASC')
+        ->get();
+    
+    $menus = App\Models\Navigation::query()
+        ->where('nav_category', 'Main')
+        ->where('page_type', '!=', 'Job')
+        ->where('page_type', '!=', 'Notice')
+        ->where('parent_page_id', 0)
+        ->where('page_status', '1')
+        ->orderBy('position', 'ASC')
+        ->get();
+    $global_setting = App\Models\GlobalSetting::all()->first();
+    if (isset($normal)) {
+        $seo = $normal;
+    } elseif (isset($job)) {
+        $seo = $job;
+    }
+    
+@endphp
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,11 +55,13 @@
     <link href="/website/lib/animate/animate.min.css" rel="stylesheet">
     <link href="/website/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+    <link id="theme-style" rel="stylesheet" href="website/assets/css/theme-1.css">
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/website/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="/website/css/style.css" rel="stylesheet">
+
     
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
     <!-- <link href="css/maxcdn.css" rel="stylesheet"> -->
