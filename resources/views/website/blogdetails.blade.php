@@ -54,7 +54,7 @@
                     <div class="social-icons">
                         <div class="icon-container" >
                             <div class="outer-circle"></div>
-                            <div class="inner-circle" style="left:60%">
+                            <div class="inner-circle">
                                 <i class="fab fa-facebook-f icon"></i>
                                 <div class="background-circle"></div>
                             </div>

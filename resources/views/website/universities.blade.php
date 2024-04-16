@@ -18,6 +18,7 @@
     $degree = [];
     $proficiency = [];
     foreach($slug1->childs as $universities){
+        if (isset($universities->long_content)){
         $content = $universities->long_content; 
         // $degree_one = $universities->short_content;
         // print_r($content);
@@ -54,6 +55,7 @@
             }
 
         }
+    }
     }
 
         // Remove duplicates and reindex the arrays

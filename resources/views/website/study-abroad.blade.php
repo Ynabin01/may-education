@@ -113,7 +113,7 @@
                             <div class="col-lg-6 order-lg-1 order-2" style="margin-top: 24px">
                                 <div class="position-relative h-100">
                                     <img class="wow zoomIn img-fluid" data-wow-delay="0.9s" src="{{$slug2->childs[2]->banner_image}}"
-                                        alt="Surgical Masks Image"
+                                        alt="Image"
                                         style=" margin-left: 30px; width: 80%; height: auto; margin-bottom: 20px; display: block; max-width: 80%;" />
                                 </div>
                             </div>

@@ -43,25 +43,33 @@
                     <div class=" col-md-8">
                         {{-- {{$slug1}} --}}
                         @foreach ($slug1->childs as $group_project)
+                            @if ($loop->iteration < 6)
+                            <?php
+                                $content = $group_project->long_content;    
+                                $parts = explode(',', $content);                                
+                            ?>
                             <div class="mb-5 row" >
                                 <div class="item media ">
                                     <div class="item-with-shadow media">
                                         <div class="media-body">
                                             <div class="meta mb-1"><span class="date">{{ \Carbon\Carbon::parse($group_project->updated_at)->format('M d, Y') }}</span></div>
-                                            <h3 class="title mb-1"><a href="blogdetails.html">{{$group_project->caption}}</a></h3>
-                                            <div class="intro">{{$group_project->short_content}}</div>
+                                            <h3 class="title mb-1"><a href="{{$slug1->nav_name}}/{{$group_project->nav_name}}">{{$group_project->caption ?? ""}}</a></h3>
+                                            <div class="intro">{{$group_project->short_content ?? ""}}</div>
                                             <div class="small-button-blog-b">
-                                                <div class="button">News</div>
-                                                <div class="button">Blogs</div>
+                                                @foreach ($parts as $part)
+                                                    <div class="button">{{$part}}</div>
+                                                @endforeach
+                                                {{-- <div class="button">Blogs</div> --}}
                                                 <div class="separator"></div>
-                                                <div class="time">5 minute read</div>
+                                                <div class="time">{{$group_project->icon_image_caption ?? ""}}</div>
                                             </div>
                                         </div><!--//media-body-->
                                         <img class="ml-3 img-fluid post-thumb d-none d-md-block"
-                                            src="/website/assets/images/blog/blog-post-thumb-7.jpg" alt="image">
+                                            src="{{$group_project->banner_image ?? ""}}" alt="image">
                                     </div>
                                 </div><!--//media-->
                             </div><!--//item-->
+                            @endif
                         @endforeach
 
                         <div class="more" style="text-align: center;">
