@@ -45,8 +45,19 @@
                         @foreach ($slug1->childs as $group_project)
                             @if ($loop->iteration < 6)
                             <?php
-                                $content = $group_project->long_content;    
-                                $parts = explode(',', $content);                                
+                                $content = $group_project->long_content;      
+                                $parts = explode('<br />', $content);    
+                                $keys = [];
+                                $result = [];
+                                foreach ($parts as $part) {
+                                    // Split each part by ":" to separate the key and value
+                                    $pair = explode('=', $part, 2);
+
+                                    // Trim whitespace from the key and value
+                                    $keys[] = trim($pair[0]);
+                                    $value = isset($pair[1]) ? trim($pair[1]) : '';
+                                    $result[] = $value;    
+                                }                              
                             ?>
                             <div class="mb-5 row" >
                                 <div class="item media ">
@@ -56,8 +67,10 @@
                                             <h3 class="title mb-1"><a href="{{$slug1->nav_name}}/{{$group_project->nav_name}}">{{$group_project->caption ?? ""}}</a></h3>
                                             <div class="intro">{{$group_project->short_content ?? ""}}</div>
                                             <div class="small-button-blog-b">
-                                                @foreach ($parts as $part)
-                                                    <div class="button">{{$part}}</div>
+                                                @foreach ($keys as $index => $res)
+                                                        <a href="{{$result[$index]}}">
+                                                            <div class="button">{{$res}}</div>
+                                                        </a>
                                                 @endforeach
                                                 {{-- <div class="button">Blogs</div> --}}
                                                 <div class="separator"></div>

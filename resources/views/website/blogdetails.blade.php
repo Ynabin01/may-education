@@ -8,131 +8,128 @@
                 <div class="bread-container">
                     <div>Home</div>
                     <div class="divider"> / </div>
-                    <div>blog Details</div>
+                    <div>{{$slug1->caption ?? ""}}</div>
                 </div>
-                <div class="b-title">Blog Details</div>
+                <div class="b-title">{{$slug2->caption ?? ""}}</div>
             </div>
         </div>
     <!-- breadcrumb end -->
 
     <!--  blog-details Start -->
-    <div class="container-xxl py-6">
-        <div class="container">
-            <div class="row">
-                <div class="col-10">
-                    <div class="n-content" style="background-color: #F3F6F8;">
-                        <div class="media-body">
-                            <h4>
-                                May Education Consultancy is stand
-                            </h4>
-                            <div class="small-button-blog-b">
-                                <div class="meta mb-1"><span class="date">May 13, 2022</span></div>
-                                <div class="button">News</div>
-                                <div class="button">Blogs</div>
+    @if (isset($slug2->childs))
+        <div class="container-xxl py-6">
+            <div class="container">
+                <div class="row share-btns">
+
+                    <div class="col-md-12 col-lg-10">
+                        <div class="n-content" style="background-color: #F3F6F8;">
+                            <div class="media-body">
+                                <h4>
+                                    {{$slug2->childs->first()->caption ?? ""}}
+                                </h4>
+                                <div class="small-button-blog-b">
+                                    <div class="meta mb-1"><span class="date">{{ \Carbon\Carbon::parse($slug2->childs->first()->updated_at)->format('M d, Y') }}</span></div>
+                                    <?php
+                                        $content = $slug2->long_content;    
+                                        $parts = explode('<br />', $content);    
+                                        $keys = [];
+                                        $result = [];
+                                        foreach ($parts as $part) {
+                                            // Split each part by ":" to separate the key and value
+                                            $pair = explode('=', $part, 2);
+
+                                            // Trim whitespace from the key and value
+                                            $keys[] = trim($pair[0]);
+                                            $value = isset($pair[1]) ? trim($pair[1]) : '';
+                                            $result[] = $value;    
+                                        }  
+                                        // print_r($keys); // Uncomment to check if keys are parsed correctly
+                                    ?>
+                                    @foreach ($keys as $index => $res)
+                                            <a href="{{$result[$index]}}">
+                                                <div class="button">{{$res}}</div>
+                                            </a>
+                                    @endforeach
+
+                                </div>
+                            </div><br>
+                            
+                            <img src=" {{$slug2->childs->first()->banner_image ?? "#"}}" class="image" style="width: 100%; height: auto;">
+                            <br>
+                            <div class="description" style="text-align: justify;">
+                                {!! htmlspecialchars_decode($slug2->childs->first()->long_content) ?? "" !!}
                             </div>
-                        </div><br>
+                        </div>
+                    </div>
                         
-                        <img src="img/public/R.jpeg" class="image" style="width: 100%; height: auto;">
-                        <br>
-                        <div class="description" style="text-align: justify;">May Education Consultancy is stand quality service
-                            and reliability has formed
-                            the roots to the individual success for study abroad and future career since over the years. These
-                            strong roots have been nurtured by a strong belief that client’s satisfaction is the foundation upon
-                            which we are built. We are very successful because of our commitment to excellence in the services
-                            rendered by us. Our business goals are inseparable from that of our client’s needs. Our faith in
-                            quality is the key to corporate success in an increasing competitive global market. We strive to
-                            achieve excellence in all areas of performances. A considerable number of our students have already
-                            been attending some of the most well reputed colleges and universities abroad, in pursuit of shaping
-                            their future & career. We are one of the best international student recruitment and Solutions
-                            Company in Nepal. Through our strong marketing network, we have built a professional platform for
-                            institutes and students to achieve their desired goals.
+                    <div class="col-md-0 col-lg-2" style=" margin-top: 25px;">
+                        <div class="social-icons">
+                            <a href="{{$slug2->childs->first()->fb_link ?? ""}}" target="_blank">
+                                <div class="icon-container" >
+                                    <div class="outer-circle"></div>
+                                    <div class="inner-circle">
+                                        <i class="fab fa-facebook-f icon"></i>
+                                        <div class="background-circle"></div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{$slug2->childs->first()->twit_link ?? ""}}" target="_blank">
+                                <div class="icon-container">
+                                    <div class="outer-circle"></div>
+                                    <div class="inner-circle">
+                                        <i class="fab fa-twitter icon"></i>
+                                        <div class="background-circle"></div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{$slug2->childs->first()->link_link ?? ""}}" target="_blank">
+                                <div class="icon-container">
+                                    <div class="outer-circle"></div>
+                                    <div class="inner-circle">
+                                        <i class="fas fa-share-alt icon"></i>
+                                        <div class="background-circle"></div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
-                      
-                <div class="col-2" style=" margin-top: 25px;">
-                    <div class="social-icons">
-                        <div class="icon-container" >
-                            <div class="outer-circle"></div>
-                            <div class="inner-circle">
-                                <i class="fab fa-facebook-f icon"></i>
-                                <div class="background-circle"></div>
-                            </div>
-                        </div>
-                        <div class="icon-container">
-                            <div class="outer-circle"></div>
-                            <div class="inner-circle">
-                                <i class="fab fa-twitter icon"></i>
-                                <div class="background-circle"></div>
-                            </div>
-                        </div>
-                        <div class="icon-container">
-                            <div class="outer-circle"></div>
-                            <div class="inner-circle">
-                                <i class="fas fa-share-alt icon"></i>
-                                <div class="background-circle"></div>
-                            </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="n-content" style="background-color: #F3F6F8;">
+                            <div class="blog-details-container">
+                                @foreach ($slug1->childs->sortByDesc('updated_at') as $group_project)
+                                    @if ($loop->iteration < 5)
+                                        <div class="blog-details-item">
+                                            <img class="blog-details-image" src="{{$group_project->banner_image ?? ""}}" />
+                                            <div class="blog-details-content">
+                                                <div class="blog-details-title">{{$group_project->caption ?? ""}}</div>
+                                                <div class="blog-details-read-more">
+                                                    <a href="{{$slug1->nav_name}}/{{$group_project->nav_name ?? ""}}">
+                                                        <div class="blog-details-read-more-link">Read More</div>
+                                                    </a>
+                                                            <i class="fas fa-arrow-right"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @if ($loop->iteration == 3)
+                                            </div><br>
+                                            <div class="blog-details-container">
+                                        @endif
+                                        @if ($loop->iteration == 4)
+                                            </div>
+                                        @endif
+
+                                    @endif
+                                @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-10">
-                    <div class="n-content" style="background-color: #F3F6F8;">
-                        <div class="blog-details-container">
-                            <div class="blog-details-item">
-                                <img class="blog-details-image" src="https://via.placeholder.com/112x122" />
-                                <div class="blog-details-content">
-                                    <div class="blog-details-title">How to write content about your photographs</div>
-                                    <div class="blog-details-read-more">
-                                        <div class="blog-details-read-more-link">Read More</div>
-                                                <i class="fas fa-arrow-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-details-item">
-                                <img class="blog-details-image" src="https://via.placeholder.com/112x122" />
-                                <div class="blog-details-content">
-                                    <div class="blog-details-title">How to write content about your photographs</div>
-                                    <div class="blog-details-read-more">
-                                        <div class="blog-details-read-more-link">Read More</div>
-                                        <i class="fas fa-arrow-right"></i>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div><br>
-                        <div class="blog-details-container">
-                            <div class="blog-details-item">
-                                <img class="blog-details-image" src="https://via.placeholder.com/112x122" />
-                                <div class="blog-details-content">
-                                    <div class="blog-details-title">How to write content about your photographs</div>
-                                    <div class="blog-details-read-more">
-                                        <div class="blog-details-read-more-link">Read More</div>
-                                        <i class="fas fa-arrow-right"></i>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-details-item">
-                                <img class="blog-details-image" src="https://via.placeholder.com/112x122" />
-                                <div class="blog-details-content">
-                                    <div class="blog-details-title">How to write content about your photographs</div>
-                                    <div class="blog-details-read-more">
-                                        <div class="blog-details-read-more-link">Read More</div>
-                                        <i class="fas fa-arrow-right"></i>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @endif
 
     <style>
         .social-icons {

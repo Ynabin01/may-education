@@ -293,8 +293,8 @@
                 <label for="page_keyword">Insta Link</label>
                 <input class="form-control" type="text" id="page_keyword" name="insta_link" placeholder="Insta Link" value="{{$navigation->insta_link}}">
             </div><div class="form-group col-md-12">
-                <label for="page_keyword">Linkdin Link</label>
-                <input class="form-control" type="text" id="page_keyword" name="link_link" placeholder="Linkdin Link" value="{{$navigation->link_link}}">
+                <label for="page_keyword">Share Link</label>
+                <input class="form-control" type="text" id="page_keyword" name="link_link" placeholder="Share Link" value="{{$navigation->link_link}}">
             </div><div class="form-group col-md-12">
                 <label for="page_keyword">Twitter Link</label>
                 <input class="form-control" type="text" id="page_keyword" name="twit_link" placeholder="Twitter Link" value="{{$navigation->twit_link}}">
