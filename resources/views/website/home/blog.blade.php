@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="button-wrapper">
-                    <a href="#" class="custom-button">
+                    <a href="/blog" class="custom-button">
                         View All
                         <div class="unique-icon">&rarr;</div>
                     </a>

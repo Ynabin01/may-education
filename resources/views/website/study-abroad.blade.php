@@ -253,9 +253,12 @@
                     </div> --}}
                     <!-- Repeat the same 6 logos for the second row -->
                 </div>
-                <div class="more-universities client-logo-study">
-                    <div class="button client-logo-study">Find More Universities</div>
-                </div>
+                <a href="/universities">
+                    <div class="more-universities client-logo-study">
+                        <div class="button client-logo-study">Find More Universities</div>
+                    </div>
+                </a>
+
             </div>
         </div>
         @endif

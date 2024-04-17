@@ -199,7 +199,7 @@ a {
 }
 
 a:hover {
-    color: #009472
+    color: black;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -3911,7 +3911,7 @@ textarea.form-control-lg {
 .nav-link {
     display: block;
     padding: .5rem 1rem;
-    color: #00B98E;
+    /* color: #00B98E; */
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out
 }
 
@@ -3922,7 +3922,7 @@ textarea.form-control-lg {
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: #009472
+    color: white
 }
 
 .nav-link.disabled {
