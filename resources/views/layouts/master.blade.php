@@ -55,7 +55,7 @@
     <link href="/website/lib/animate/animate.min.css" rel="stylesheet">
     <link href="/website/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <link id="theme-style" rel="stylesheet" href="website/assets/css/theme-1.css">
+    <link id="theme-style" rel="stylesheet" href="/website/assets/css/theme-1.css">
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/website/css/bootstrap.min.css" rel="stylesheet">
 
@@ -161,7 +161,7 @@
                             @endif
                         </div>
                     @endforeach
-                    <a href="/enquiry" class="nav-item nav-link">Enquiry</a>
+                    {{-- <a href="/enquiry" class="nav-item nav-link">Enquiry</a> --}}
                     <a href="/contact" class="nav-item nav-link">Contact</a>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
@@ -324,6 +324,7 @@
         <!-- Template Javascript -->
         <script src="/website/js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+        
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const questions = document.querySelectorAll('.question');

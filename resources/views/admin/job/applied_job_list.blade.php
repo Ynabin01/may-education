@@ -88,7 +88,8 @@
                                     <td>{{$contact->first_name ?? ''}}</td>                                     
                                     <td>{{$contact->subject ?? ''}}</td> 
                                     <td>{{$contact->email ?? ''}}</td>
-                                     <td>{{$contact->country ?? ''}}</td>  
+                                    <td>{{$contact->message ?? ''}}</td>
+                                    <td>{{$contact->country ?? ''}}</td>  
                                     {{-- cv --}}
                                     <!-- <td style="display: flex; align-items:center">
                                         @if (isset($contact->cv))
@@ -98,12 +99,11 @@
                                         </a>                                                
                                         @endif
                                     </td> -->
-                                    <td>{{$contact->message ?? ''}}</td>
-                                    <td>{{$contact->faculty ?? ''}}</td>  
-                                    <td>{{$contact->contact_number ?? ''}}</td>
-                                    <td>{{$contact->education ?? ''}}</td>
-                                    <td>{{$contact->have_done ?? ''}}</td>  
-                                    <td>{{$contact->score ?? ''}}</td>  
+                                    <td>{{$contact->permanent_address ?? ''}}</td>  
+                                    <td>{{$contact->number ?? ''}}</td>
+                                    <td>{{$contact->temporary_address ?? ''}}</td>
+                                    <td>{{$contact->cv ?? ''}}</td>  
+                                    <td>{{$contact->file ?? ''}}</td>  
                                     {{-- photo  --}}
                                     {{-- <td style="display: flex; align-items:center">
                                         @if (isset($contact->photo))

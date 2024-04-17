@@ -109,7 +109,7 @@ class ContactController extends Controller
         $contact->country = $req['country'];
 
         $contact->message = $req['message'];
-        // $contact->subject = $req['subject'];
+        $contact->subject = $req['subject'];
         $contact->job_id = $req['job_id'];
         $contact->save();
 

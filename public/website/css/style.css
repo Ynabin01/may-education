@@ -23,6 +23,18 @@
 
 }
 
+.futkau-cls{
+    width: max-content; 
+    display: block; 
+    margin-left: 25px;
+    margin-top: -3px;
+}
+
+#futkadu{
+    display: flex;
+}
+
+
 .logo-center{
     display: flex;
     justify-content: space-evenly;

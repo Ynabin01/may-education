@@ -712,21 +712,25 @@ class HomeController extends Controller
 
     public function AppointmentStore(Request $req)
     {
-        // return "gel";
 
-        $validated = $req->validate([
-            'name' => 'required',
-            'number' => 'required',
-        ]);
+        // $validated = $req->validate([
+        //     'name' => 'required',
+        //     'number' => 'required',
+        // ]);
 
         $contact = new Contact;
         $contact->first_name = $req['name'];
-        $contact->number = $req['number'];
-        $contact->subject = $req['service'];
-        $contact->last_name = $req['doctor'];
+        $contact->email = $req['email'];
+        $contact->country = $req['country'];
+        $contact->permanent_address = $req['faculty'];
+        $contact->temporary_address = $req['edu_lvl'];
 
-        $contact->permanent_address = $req['date'];
-        $contact->temporary_address = $req['time'];
+        $selectedValues = $req['have_you_done'];
+        $contact->cv =  implode(', ', $selectedValues);
+
+        $contact->number = $req['phone'];
+        $contact->file = $req['score'];
+
         $contact->save();
 
         if ($contact) {
