@@ -2180,7 +2180,7 @@
 }
 
 .bread-container {
-    max-width: 15em;
+    max-width: 13em;
     /* Adjust the maximum width of the container */
 }
 
@@ -2188,7 +2188,7 @@
 /* Media query for responsiveness */
 @media screen and (max-width: 768px) {
     .bread-container {
-        max-width: 100%;
+        max-width: 13em;
         /* Adjust maximum width for smaller screens */
     }
 }
