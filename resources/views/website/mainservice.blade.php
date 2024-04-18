@@ -19,7 +19,7 @@
         <div class="inside_body">
 
             <div class="container">
-                <div class="row g-4" style="margin-left: 0px;">
+                <div class="row g-4" style="margin-left: 20px; margin-right: 0px;">
                     @foreach ($services->childs->sortByDesc('created_at') as $sub)
                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item rounded">

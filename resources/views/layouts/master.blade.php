@@ -70,7 +70,7 @@
 </head>
 
 <body>
-<div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <p style="margin-top: 10px; margin-bottom: 10px;">
@@ -100,7 +100,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                             style="color: black; margin-left: -18px;">Tinkune Office</a>
                         <div class="dropdown-menu m-0" style="min-width: 100px;"> <!-- Adjust min-width as needed -->
-                            <a href="feature.html" class="dropdown-item" style="color: black;">Koteshwor Office</a>
+                            <a href="#" class="dropdown-item" style="color: black;">Koteshwor Office</a>
                         </div>
                     </div>
                 </div>
