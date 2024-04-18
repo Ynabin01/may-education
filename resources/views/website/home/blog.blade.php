@@ -5,7 +5,6 @@
                         Your source for up-to-date<br /> blogs
                     </div><br> <br>
                     <div class="blog-gallery">
-
                         <div class="blog-gallery-item" style="height: 300px !important;">
                             <img src="website/img/public/unsplashtuv1rzqpuy-3@2x.png" alt="">
                             <div class="blog-gallery-info">
@@ -22,7 +21,6 @@
                                         &plus; see details</div>
                                 </div>
                             </div>
-
                         </div>
 
                         <div class="blog-gallery-item" style="height: 300px !important;">
@@ -42,7 +40,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="blog-gallery-item" style="height: 300px !important;">
                             <img src="website/img/public/image-1@2x.png" alt="">
                             <div class="blog-gallery-info">
@@ -60,7 +57,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="blog-gallery-item" style="height: 300px !important;">
                             <img src="website/img/public/image-31@2x.png" alt="">
                             <div class="blog-gallery-info">
@@ -78,17 +74,13 @@
                                 </div>
                             </div>
                     </div>
-
                     <!-- Add more gallery items here -->
                 </div>
-
-                <div class="button-wrapper">
-                    <a href="/blog" class="custom-button">
-                        View All
-                        <div class="unique-icon">&rarr;</div>
-                    </a>
+                <br>
+                <div class="unique-button" style="background-color:#CF1312; height: 50px; width: 150px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                    <a href="/blog" class="unique-learn-more" style="color: white;">Explore More</a>
+                    <div class="unique-icon" style="color: white;">&rarr;</div>
                 </div>
-
             </div>
         </div>
 
