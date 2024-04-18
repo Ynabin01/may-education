@@ -330,7 +330,8 @@ class HomeController extends Controller
         }
         elseif($menu == "blog"){
             // return "hlo";
-            return view("website.blog")->with(['services'=>$services, 'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>""]);
+            $blogs = $slug1->childs()->paginate(5);
+            return view("website.blog")->with(['blogs'=>$blogs, 'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>""]);
 
         }
         elseif($menu == "universities"){
