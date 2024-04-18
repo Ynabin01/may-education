@@ -169,46 +169,6 @@
                             </div>
                         </div>
                     @endforeach
-                    {{-- <div class="std-faq">
-                        <div class="question">
-                            What are the benefits of the co-operative business model?
-                            <i class="fas fa-chevron-down  "></i>
-                        </div>
-                        <div class="answer">
-                            The co-operative business model has two key advantages. The first is its ability to support
-                            local
-                            economic, business and community development. The second is its versatility. A co-op can be a
-                            small,
-                            three-person shop or a global partnership, and just about everything in between.
-                        </div>
-                    </div>
-                    <div class="std-faq">
-                        <div class="question">
-                            What are the benefits of the co-operative business model?
-                            <i class="fas fa-chevron-down  "></i>
-                        </div>
-                        <div class="answer">
-                            The co-operative business model has two key advantages. The first is its ability to support
-                            local
-                            economic, business and community development. The second is its versatility. A co-op can be a
-                            small,
-                            three-person shop or a global partnership, and just about everything in between.
-                        </div>
-                    </div>
-                    <div class="std-faq">
-                        <div class="question">
-                            What are the benefits of the co-operative business model?
-                            <i class="fas fa-chevron-down  accordion-flush"></i>
-                        </div>
-                        <div class="answer">
-                            The co-operative business model has two key advantages. The first is its ability to support
-                            local
-                            economic, business and community development. The second is its versatility. A co-op can be a
-                            small,
-                            three-person shop or a global partnership, and just about everything in between.
-                        </div>
-                    </div> --}}
-                    <!-- Repeat the same structure for other FAQs -->
                 </div>
             </div>
         @endif
@@ -219,49 +179,27 @@
                 $photos = NavigationItems::query()->where('navigation_id',$slug2->childs[4]->id)->latest()->get();
             }
         @endphp
-        @if (isset($slug2->childs[4]))
-        <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="margin: 0 auto;">
-            <div class="container client-logo-study">
-                <div class="title client-logo-study">{{$slug2->childs[4]->caption}}</div>
-                <div class="universities client-logo-study">
-                    @foreach ($photos as $sub)
-                        <!-- Repeat 6 logos -->
-                        <div class="university client-logo-study">
-                            <img src="/uploads/photo_gallery/{{ $sub->file }}" alt="University Logo">
-                        </div>
-                    @endforeach
-                    {{-- <div class="university client-logo-study">
-                        <img src="https://via.placeholder.com/200x200" alt="University Logo">
+       @if (isset($slug2->childs[4]))
+            <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="container">
+                    <div class="title text-center mb-4">{{$slug2->childs[4]->caption}}</div>
+                    <div class="row justify-content-center">
+                        @foreach ($photos as $sub)
+                            <!-- Repeat 6 logos -->
+                            <div class="col-6 col-md-4 col-lg-2 mb-4">
+                                <div class="university">
+                                    <img src="/uploads/photo_gallery/{{ $sub->file }}" alt="University Logo" class="img-fluid">
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                    <div class="university client-logo-study">
-                        <img src="https://via.placeholder.com/200x200" alt="University Logo">
+                    <div class="text-center mt-4">
+                        <a href="/universities" class="btn btn-primary">Find More Universities</a>
                     </div>
-                    <div class="university client-logo-study">
-                        <img src="https://via.placeholder.com/200x200" alt="University Logo">
-                    </div>
-                    <div class="university client-logo-study">
-                        <img src="https://via.placeholder.com/200x200" alt="University Logo">
-                    </div>
-                    <div class="university client-logo-study">
-                        <img src="https://via.placeholder.com/200x200" alt="University Logo">
-                    </div>
-                    <div class="university client-logo-study">
-                        <img src="https://via.placeholder.com/200x200" alt="University Logo">
-                    </div>
-                    <div class="university client-logo-study">
-                        <img src="https://via.placeholder.com/200x200" alt="University Logo">
-                    </div> --}}
-                    <!-- Repeat the same 6 logos for the second row -->
                 </div>
-                <a href="/universities">
-                    <div class="more-universities client-logo-study">
-                        <div class="button client-logo-study">Find More Universities</div>
-                    </div>
-                </a>
-
             </div>
-        </div>
         @endif
+
 
     </div>
 
