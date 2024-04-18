@@ -666,12 +666,33 @@ class HomeController extends Controller
         $slug = $req->input('slug');
         // return $slug;
       
+        // $blogs = Navigation::where('parent_page_id', 2756)
+        //         ->where(function($query) use ($slug) {
+        //             $query->where('caption', 'LIKE', '%' . $slug . '%')
+        //                   ->orWhere('updated_at', 'LIKE', '%' . $slug . '%');
+        //         })
+        //         ->paginate(5);
+
+        // $blogs = Navigation::where('parent_page_id', 2756)
+        //         ->where(function($query) use ($slug) {
+        //             $query->where('caption', 'LIKE', '%' . $slug . '%')
+        //                   ->orWhereRaw("DATE_FORMAT(updated_at, '%Y-%m-%d') LIKE ?", ['%' . $slug . '%'])
+        //                   ->orWhereRaw("DATE_FORMAT(updated_at, '%Y-%m') LIKE ?", ['%' . $slug . '%'])
+        //                   ->orWhereRaw("DATE_FORMAT(updated_at, '%Y') LIKE ?", ['%' . $slug . '%']);
+        //         })
+        //         ->paginate(5);
+        
         $blogs = Navigation::where('parent_page_id', 2756)
-                ->where(function($query) use ($slug) {
-                    $query->where('caption', 'LIKE', '%' . $slug . '%')
-                          ->orWhere('updated_at', 'LIKE', '%' . $slug . '%');
-                })
-                ->paginate(5);
+                        ->where(function($query) use ($slug) {
+                            $query->where('caption', 'LIKE', '%' . $slug . '%')
+                                ->orWhereRaw("MONTHNAME(updated_at) LIKE ?", ['%' . $slug . '%'])
+                                ->orWhereRaw("DATE_FORMAT(updated_at, '%Y-%m-%d') LIKE ?", ['%' . $slug . '%'])
+                                ->orWhereRaw("DATE_FORMAT(updated_at, '%Y-%m') LIKE ?", ['%' . $slug . '%'])
+                                ->orWhereRaw("DATE_FORMAT(updated_at, '%Y') LIKE ?", ['%' . $slug . '%']);
+                        })
+                        ->paginate(5);
+
+            
 
 
         $slug1 = Navigation::where('id', 2756)->first(); 
