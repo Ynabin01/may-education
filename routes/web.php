@@ -104,7 +104,8 @@ Route::get('gallery-view/{slug}',[HomeController::class,"GotoGallery"])->name('G
 Route::get('/joblist/{category_slug}',[HomeController::class,"getJobListWithCategory"])->name('JobList');
 Route::get('view-all',[HomeController::class,"viewAll"])->name('viewall');
 Route::get('read-more/{slug}',[HomeController::class,'ReadMore'])->name('readmore');
-Route::get('inquiry/{slug}',[HomeController::class,'inquiry'])->name('inquiry');
+
+Route::get('search',[HomeController::class,'search'])->name('search');
 
 Route::POST('jobapply/store/{slug}',[ContactController::class,'ContactStore'])->name('storeapply');
 Route::get('/jobdetail/{jobslug}',[HomeController::class,'singlePage'])->name('single_job');

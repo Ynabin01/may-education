@@ -21,7 +21,24 @@
                 <div class="row blog-grid">
                     <div class="search-blog-p  col" style="margin-bottom: 50px;">
                         <!-- <div class="search-blog-p input-container"> -->
-                        <input type="text" class="search-blog-p input-text" placeholder="Search for News">
+                        {{-- <input type="text" class="search-blog-p input-text" placeholder="Search for News"> --}}
+                        <form id="searchForm" action="{{ route('search') }}" method="GET">
+                            <input id="searchInput" type="text" name="slug" class="search-blog-p input-text" placeholder="@if(isset($slug2)){{$slug2}} @else Search for News @endif">
+                            {{-- <button type="submit">Search</button> --}}
+                        </form>
+                        
+                        <script>
+                            document.getElementById("searchForm").addEventListener("submit", function(event) {
+                                var searchValue = document.getElementById("searchInput").value.trim();
+                                if (!searchValue) {
+                                    event.preventDefault(); // Prevent form submission if search value is empty
+                                    return;
+                                }
+                                // var actionUrl = "{{ route('search', ['slug' => '']) }}/" ;
+                                this.setAttribute("action", actionUrl);
+                            });
+                        </script>
+                        
                         <!-- </div> -->
                         <div class="search-blog-p title">Discover More</div>
                         <div class="search-blog-p button-container">
