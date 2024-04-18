@@ -31,7 +31,7 @@
                                     <div style="font-family: Poppins; color: black; font-size: 14px; text-align: justify;">
                                         {{$sub->short_content}}
                                     </div>
-                                    <a href="#" style="text-decoration: none;">
+                                    <a href="{{$sub->nav_name}}/@if ($child = $sub->childs->first()){{$child->nav_name}} @endif" style="text-decoration: none;">
                                         <div style="width: 100%; display: flex; justify-content: flex-start; align-items: center; gap: 8px; margin-top: 10px; cursor: pointer;">
                                             <div style="color: #CF1312; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 14px; word-wrap: break-word;">
                                                 Learn More

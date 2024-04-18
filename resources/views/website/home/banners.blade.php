@@ -19,7 +19,7 @@
                 <br>
                 <div class="unique-button"
                     style="background-color:#CF1312; height: 50px; width: 150px; display: flex; justify-content: center; align-items: center;">
-                    <a href="#" class="unique-learn-more" style="color: white;">Explore More</a>
+                    <a href="/about-one/about-us-one" class="unique-learn-more" style="color: white;">Explore More</a>
                     <div class="unique-icon" style="color: white;">&rarr;</div>
                 </div>
             </div>

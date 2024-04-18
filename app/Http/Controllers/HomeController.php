@@ -162,13 +162,13 @@ class HomeController extends Controller
         else{
             $pricingplan = null; 
         }
-        if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%benefits%")->where('page_type','Group')->latest()->first()!=null){
-            $benefits_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%benefits%")->where('page_type','Group')->latest()->first()->id;
-            $benefits  = Navigation::query()->where('parent_page_id',$benefits_id)->latest()->get();
+        if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%photos%")->where('page_type','Group')->latest()->first()!=null){
+            $photos_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%photos%")->where('page_type','Group')->latest()->first()->id;
+            $photos= Navigation::query()->where('parent_page_id',$photos_id)->latest()->get();
             //return $partners;
         }
         else{
-            $benefits = null;
+            $photos= null;
         }
         // if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%jobs%")->where('page_type','Group')->latest()->first()!=null){
         //     $jobs_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%jobs%")->where('page_type','Group')->latest()->first()->id;
@@ -193,7 +193,7 @@ class HomeController extends Controller
     
         $global_setting = GlobalSetting::all()->first(); 
         //return $missons;       
-        return view("website.index")->with(['projectlist'=>$projectlist, 'partners'=>$partners,'offers'=>$offers,'benefits'=>$benefits,'vacancy'=>$vacancy,'pricingplan'=>$pricingplan,'features'=>$features,'vision'=>$vision,'goal'=>$goal,'services'=>$services,'newsbanner'=>$newsbanner,'job_categories'=>$job_categories,'testimonial'=>$testimonial,'statistics'=>$statistics,'banners'=>$banners, 'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders,'missons'=>$missons,'message'=>$message,'jobs'=>$jobs,'abroad'=>$abroad]);
+        return view("website.index")->with(['projectlist'=>$projectlist, 'partners'=>$partners,'offers'=>$offers,'photos'=>$photos,'vacancy'=>$vacancy,'pricingplan'=>$pricingplan,'features'=>$features,'vision'=>$vision,'goal'=>$goal,'services'=>$services,'newsbanner'=>$newsbanner,'job_categories'=>$job_categories,'testimonial'=>$testimonial,'statistics'=>$statistics,'banners'=>$banners, 'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders,'missons'=>$missons,'message'=>$message,'jobs'=>$jobs,'abroad'=>$abroad]);
     }
 
 

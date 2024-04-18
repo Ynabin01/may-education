@@ -75,9 +75,9 @@
                 <div class="col-md-6 col-sm-12">
                     <p style="margin-top: 10px; margin-bottom: 10px;">
                         <span>&nbsp;<i class="fas fa-envelope text-black"></i> <a href="mailto:info@may.edu.np"
-                                style="color: black;">info@may.edu.np</a></span>
+                                style="color: black;">{{ $global_setting->site_email }}</a></span>
                         <span style="margin-left: 10px;"><i class="fas fa-phone-alt text-black"></i> <a
-                                href="tel:+977 01-4240108" style="color: black;">+977 01-4240108</a></span>
+                                href="tel:+977 01-4240108" style="color: black;">{{ $global_setting->phone }}</a></span>
                     </p>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6 text-right d-none d-sm-block v-social-text-align f-links" style="
@@ -87,11 +87,11 @@
                 align-items: center;
             ">
                     <div class="top-bar-social v-social" style="display: inline-block; ">
-                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"
+                        <a href="{{ $global_setting->facebook ?? '#' }}" target="_blank"><i class="fab fa-facebook-f"
                                 style="margin-right: 10px;"></i></a>
-                        <a href="https://twitter.com/home" target="_blank"><i class="fab fa-twitter"
+                        <a href="{{ $global_setting->twitter ?? '#' }}" target="_blank"><i class="fab fa-twitter"
                                 style="margin-right: 10px;"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="{{ $global_setting->linkedin ?? '#' }}" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                     <div class="vertical-line"
                         style="display: inline-block; margin-left: 10px; margin-right: 10px; height: 28px; border-left: 2px solid #000;">
@@ -163,11 +163,6 @@
                     @endforeach
                     {{-- <a href="/enquiry" class="nav-item nav-link">Enquiry</a> --}}
                     <a href="/contact" class="nav-item nav-link">Contact</a>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </li>
                 </div>
             </div>
         </nav>
@@ -201,20 +196,23 @@
                         <div class="q-links" style="text-align: center;">
                             <div style=" margin-bottom: 15px; max-width: none; width: 100%; color: #212529; font-size: 14px; font-family: Montserrat; font-weight: 600; line-height: 18px; word-wrap: break-word; margin-bottom: 8px;">
                                 Quick Links</div>
-                                <a href="#"
+                                <a href="/about-one/about-us-one"
                                     style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;">About
                                     Us</a>
-                                <a href="#"
+                                <a href="/universities"
+                                    style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;"> 
+                                    Universities</a>
+                                <a href="/services"
                                     style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;">Services</a>
-                                <a href="#"
-                                    style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;">Study
-                                    Abroad</a>
-                                <a href="#"
-                                    style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;">Test
-                                    Preparation</a>
-                                <a href="#"
-                                    style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;">Enquiry
-                                    Form</a>
+                                <a href="gallary/photo-gallery-one"
+                                    style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;"> 
+                                    Photo Gallery</a>
+                                <a href="/blog"
+                                    style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;">  
+                                   Blog</a>
+                                   <a href="/contact"
+                                    style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;">  
+                                   Contact</a>
                         </div>                    
                 </div>
                 <div class="col-md-6 col-lg-3 timing-res" style="">
@@ -251,7 +249,7 @@
                                         style="align-self: stretch; padding: 6px; border: 1px rgba(61.20, 61.20, 61.20, 0.24) solid; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
                                         <div
                                             style="color: #3D3D3D; font-size: 10px; font-family: Poppins; font-weight: 400; line-height: 12px; word-wrap: break-word">
-                                            9:00 AM - 6:00 PM</div>
+                                            {{ $seo->page_description ?? $global_setting->page_description }}</div>
                                     </div>
                                     <div
                                         style="align-self: stretch; padding: 6px; border-top-left-radius: 4px; border-left: 1px rgba(61.20, 61.20, 61.20, 0.24) solid; border-right: 1px rgba(61.20, 61.20, 61.20, 0.24) solid; border-bottom: 1px rgba(61.20, 61.20, 61.20, 0.24) solid; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
@@ -290,11 +288,11 @@
                 </div>
                 <div class="col-md-6 col-lg-3 ifra">
                     <div
-                        style="margin-bottom: 15px; max-width: none; width: 100%; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 600; line-height: 15px; word-wrap: break-word">
+                        style="margin-bottom: 5px; max-width: none; width: 100%; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 600; line-height: 15px; word-wrap: break-word">
                         Map Location</div>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.71405272388!2d-0.2416810400390625!3d51.52855824899365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ebe4c763df%3A0x6c767c9547c0e8b8!2sLondon%2C%20UK!5e0!3m2!1sen!2sus!4v1646985121551!5m2!1sen!2sus"
-                        width="100%" height="135" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        width="100%" height="130" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 <div class="col-md-0 col-lg-1">
                 </div>
