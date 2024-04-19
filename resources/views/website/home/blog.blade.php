@@ -77,8 +77,8 @@
                     <!-- Add more gallery items here -->
                 </div>
                 <br>
-                <div class="unique-button" style="background-color:#CF1312; height: 50px; width: 150px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
-                    <a href="/blog" class="unique-learn-more" style="color: white;">Explore More</a>
+                <div class="unique-button" style="background-color:#CF1312; height: 40px; width: 100px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                    <a href="/blog" class="unique-learn-more" style="color: white;">View All</a>
                     <div class="unique-icon" style="color: white;">&rarr;</div>
                 </div>
             </div>

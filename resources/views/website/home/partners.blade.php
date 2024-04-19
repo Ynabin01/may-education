@@ -1,7 +1,8 @@
 <div class="container-xxl bg-primary my-6 py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <h2 class="mb-5 text-center" style="color: #212529; font-size: 24px; font-family: Montserrat; font-weight: 500; line-height: 24px;">
-        Our Partners
-    </h2>
+        <h2 class="mb-5"
+            style="color: #212529; font-size: 24px; font-family: Montserrat; font-weight: 500; line-height: 24px; letter-spacing: 2px;  font-size: 18px; text-align: center; word-wrap: break-word">
+            Our Partners
+        </h2>
 
     <div class="container">
         <div class="d-flex align-items-center justify-content-center mb-4">
