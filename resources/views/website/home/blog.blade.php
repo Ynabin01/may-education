@@ -45,7 +45,7 @@
                             <div class="blog-gallery-info">
                                 <div
                                     style="width: 100%; color: white; font-size: 10px; font-family: Poppins; font-weight: 300; text-transform: uppercase; line-height: 18px; letter-spacing: 1.20px; word-wrap: break-word">
-                                    aUCTION</div>
+                                    AUCTION</div>
                                 <div
                                     style="width: 100%; color: white; font-size: 16px; font-family: Montserrat; font-weight: 700; line-height: 23.40px; word-wrap: break-word">
                                     Notice regarding Auction of Promoter Shares of Capital Merchant</div>
