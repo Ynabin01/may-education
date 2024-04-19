@@ -20,7 +20,7 @@
 
             <div class="container">
                 <div class="row g-4" style="margin-left: 20px; margin-right: 0px;">
-                    @foreach ($services->childs->sortByDesc('created_at') as $sub)
+                    @foreach ($services->sortByDesc('created_at') as $sub)
                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item rounded">
                             <div class="border border-dark rounded" style="padding: 10px;">
@@ -60,6 +60,7 @@
 
     
     <!-- Normal Start -->
+    {{ $services->links('vendor.pagination.default copy') }}                       
 
     <!-- Normal End -->
     {{-- <div class="gallery-indicator" style="  display: flex; justify-content: center; align-items: center;">

@@ -124,7 +124,7 @@
                                     {{$slug2->childs[2]->long_content}}</div>
                                 <div
                                     style="max-width: 100%; word-wrap: break-word; color: #3d3d3d; font-size: 14px; font-family: Outfit; font-weight: 400; line-height: 30px;">
-                                    @foreach ($slug2->childs[2]->childs->sortByDesc('updated_at') as $subsubsub)
+                                    @foreach ($slug2->childs[2]->childs as $subsubsub)
                                                             
                                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; ">
                                         <div

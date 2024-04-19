@@ -109,24 +109,6 @@
                         </div>   --}}
 
                         {{ $blogs->links('vendor.pagination.default copy') }}                       
-                        <script>
-                            document.addEventListener("DOMContentLoaded", function() {
-                                const tabs = document.querySelectorAll('.dd');
-                        
-                                tabs.forEach(tab => {
-                                    tab.addEventListener('click', function() {
-                                        tabs.forEach(t => t.classList.remove('active'));
-                                        this.classList.add('active');
-                                    });
-                                });                              
-                            });
-                        </script>
-                        <style>
-                            .gallery-indicator-item.disable:hover {
-                                cursor: unset;
-                                background-color: unset;
-                            }
-                        </style>
                     </div>
                 </div>
             </section>

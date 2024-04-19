@@ -114,7 +114,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        @if ($loop->iteration == 3)
+                                        @if ($loop->iteration == 2)
                                             </div><br>
                                             <div class="blog-details-container">
                                         @endif

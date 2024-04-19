@@ -245,7 +245,7 @@ class HomeController extends Controller
         }
         if(Navigation::query()->where('nav_category','Main')->where('nav_name', 'LIKE', "%services%")->where('page_type','Group')->latest()->first()!=null){
             $services_id = Navigation::query()->where('nav_category','Main')->where('nav_name', 'LIKE', "%services%")->where('page_type','Group')->latest()->first()->id;
-            $services = Navigation::query()->where('id',$services_id)->latest()->first();
+            $services = Navigation::query()->where('parent_page_id',$services_id)->latest()->paginate(8);
             // return $services;
         }
         else{
@@ -619,7 +619,7 @@ class HomeController extends Controller
             }
             elseif($subcategory_type == "Group"){   
                 
-                $photos = Navigation::find($subcategory_id);
+                $photos = Navigation::query()->where('parent_page_id',$subcategory_id)->paginate(6);
                 // return $photos;
                 return view("website.galleryfolder")->with(['photos'=>$photos,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
             }

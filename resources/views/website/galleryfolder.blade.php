@@ -23,7 +23,7 @@ use App\Models\NavigationItems;
     <div class="container">
         <div class="gallery-container">
             <div class="gallery-items">
-                @foreach ($photos->childs as $photo)
+                @foreach ($photos as $photo)
                 <?php
                     $images = NavigationItems::query()->where('navigation_id',$photo->id)->latest()->get();
                 ?>
@@ -51,9 +51,10 @@ use App\Models\NavigationItems;
 </div>
 
     <!-- Normal Start -->
+    {{ $photos->links('vendor.pagination.default copy') }}                       
 
     <!-- Normal End -->
-    <div class="gallery-indicator" style="  display: flex; justify-content: center; align-items: center;">
+    {{-- <div class="gallery-indicator" style="  display: flex; justify-content: center; align-items: center;">
         <div class="gallery-indicator-item">
             <i class="gallery-chevron fas fa-chevron-left"></i>
         </div>
@@ -72,6 +73,6 @@ use App\Models\NavigationItems;
         <div class="gallery-indicator-item">
             <i class="gallery-chevron fas fa-chevron-right"></i>
         </div>
-    </div>
+    </div> --}}
 
 @endsection
