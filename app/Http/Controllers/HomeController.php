@@ -121,9 +121,8 @@ class HomeController extends Controller
         else{
             $services = null;
         }
-        if(Navigation::query()->where('nav_category','Main')->where('nav_name', 'LIKE', "%study-abroad-page%")->where('page_type','Group')->latest()->first()!=null){
-            $abroad_id = Navigation::query()->where('nav_category','Main')->where('nav_name', 'LIKE', "%study-abroad-page%")->where('page_type','Group')->latest()->first()->id;
-            $abroad = Navigation::query()->where('parent_page_id',$abroad_id)->latest()->get();
+        if(Navigation::query()->where('nav_category','Home')->where('id', 2907)->where('page_type','Group')->latest()->first()!=null){
+            $abroad = Navigation::query()->where('parent_page_id',2907)->get();
             // return $abroad;
         }
         else{

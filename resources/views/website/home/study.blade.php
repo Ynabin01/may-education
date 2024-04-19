@@ -25,7 +25,7 @@
             </div>
             
             <div class="homestudy-list nav" id="myTab" role="tablist">
-                @foreach ($abroad->sortBy('updated_at') as $sub)
+                @foreach ($abroad as $sub)
                     <a href="abroad{{$sub->id}}" data-bs-toggle="tab" data-bs-target="#abroad{{$sub->id}}" class="homestudy-item  @if ($loop->iteration == 1)active @endif" style=" color: black; text-decoration: none;">
                         <div class="homestudy-name @if ($loop->iteration == 1)active @endif">{{$sub->caption}}</div>
                     </a>
@@ -50,97 +50,93 @@
             </div>
             <div class="tab-content">
                 @php $innerIteration = 0; @endphp
-                @foreach ($abroad->sortBy('updated_at') as $sub)
+                @foreach ($abroad as $subsub)
                     @php $innerIteration++; @endphp
-                    @foreach ($sub->childs->sortBy('updated_at') as $subsub)
-                        @if($subsub->short_content == "show-index")
-                            <div id="abroad{{$sub->id}}" class="tab-pane @if ($innerIteration == 1)active @endif">
-                                <div class="container-fluid py-5 fadeInUp" data-wow-delay="0.1s"
-                                    style="margin-top: 20px; margin-bottom: -60px;">
-                                    <div class="container" style="margin-bottom: 40px;">
-                                        <div class="row g-5">
-                                            <div class="row">
-                                                <div class="col-lg-6 order-lg-1 order-2" style="margin-top: 24px">
-                                                    <div class="position-relative h-100">
-                                                        <img class="zoomIn img-fluid study-img" data-wow-delay="0.1s" src="{{$subsub->banner_image ?? ''}}"
-                                                            alt="Surgical Masks Image"
-                                                            style="width: 90%; height: auto; margin-bottom: 20px; display: block; max-width: 100%; position: relative; right: 0;" />
+                    <div id="abroad{{$subsub->id}}" class="tab-pane @if ($innerIteration == 1)active @endif">
+                        <div class="container-fluid py-5 fadeInUp" data-wow-delay="0.1s"
+                            style="margin-top: 20px; margin-bottom: -60px;">
+                            <div class="container" style="margin-bottom: 40px;">
+                                <div class="row g-5">
+                                    <div class="row">
+                                        <div class="col-lg-6 order-lg-1 order-2" style="margin-top: 24px">
+                                            <div class="position-relative h-100">
+                                                <img class="zoomIn img-fluid study-img" data-wow-delay="0.1s" src="{{$subsub->banner_image ?? ''}}"
+                                                    alt="Surgical Masks Image"
+                                                    style="width: 90%; height: auto; margin-bottom: 20px; display: block; max-width: 100%; position: relative; right: 0;" />
 
-                                                    </div>
-                                                </div>
-                    
-                                                <div class="col-lg-6 order-lg-2 order-1" style="margin-top: 80px">
-                                                    <div
-                                                        style="margin-bottom: 14px; width: 100%; color: #212529; font-size: 24px; font-family: Montserrat; font-weight: 500; line-height: 31.20px; margin-top: -45px; word-wrap: break-word">
-                                                        {{-- Why Australia could be better destiny for your education --}}
-                                                        {{$subsub->long_content}}
-                                                    </div>
-                                                    <div
-                                                        style="max-width: 100%; word-wrap: break-word; color: #3d3d3d; font-size: 14px; font-family: Outfit; font-weight: 400; line-height: 30px;">
-                                                        @foreach ($subsub->childs->sortByDesc('updated_at') as $subsubsub)
-                                                        
-                                                            <div  class="left-icon-main" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; ">
-                                                                <div class="left-icon"
-                                                                    style=" width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
-                                                                    <div
-                                                                        style="width: 12px; height: 12px; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
-                                                                        <span
-                                                                            style="color: #3d3d3d; font-size: 10px; line-height: 1; font-weight: bold">&rarr;</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div style="flex: 1">
-                                                                    {{$subsubsub->short_content}}
-                                                                    {{-- Purpose: Surgical masks are designed to provide a barrier and protection
-                                                                    against respiratory droplets, including those carrying bacteria and viruses. --}}
-                                                                </div>
-                                                            </div>
-                                                        @endforeach
-                                                        {{-- <div style="display: flex; align-items: center; gap: 8px">
-                                                            <div
-                                                                style="margin-top: -27px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
-                                                                <div
-                                                                    style="width: 12px; height: 12px; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
-                                                                    <span
-                                                                        style="color: #3d3d3d; font-size: 10px; line-height: 1; font-weight: bold">&rarr;</span>
-                                                                </div>
-                                                            </div>
-                                                            <div style="flex: 1">
-                                                                Purpose: Surgical masks are designed to provide a barrier and protection
-                                                                against respiratory droplets, including those carrying bacteria and viruses.
-                                                            </div>
-                                                        </div>
-                                                        <div style="display: flex; align-items: center; gap: 8px">
-                                                            <div
-                                                                style="margin-top: -27px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
-                                                                <div
-                                                                    style="width: 12px; height: 12px; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
-                                                                    <span
-                                                                        style="color: #3d3d3d; font-size: 10px; line-height: 1; font-weight: bold">&rarr;</span>
-                                                                </div>
-                                                            </div>
-                                                            <div style="flex: 1">
-                                                                Purpose: Surgical masks are designed to provide a barrier and protection
-                                                                against respiratory droplets, including those carrying bacteria and viruses.
-                                                            </div>
-                                                        </div> --}}
-                    
-                                                        <!-- Repeat the same structure for other points -->
-                                                        <div class="unique-button"
-                                                            style="background-color:#CF1312; height: 30px; width: 110px; display: flex; justify-content: center; align-items: center;">
-                                                            <a href="#" class="unique-learn-more" style="color: white;">Explore More</a>
-                                                            <div class="unique-icon" style="color: white;">&rarr;</div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                    
                                             </div>
                                         </div>
+            
+                                        <div class="col-lg-6 order-lg-2 order-1" style="margin-top: 80px">
+                                            <div
+                                                style="margin-bottom: 14px; width: 100%; color: #212529; font-size: 24px; font-family: Montserrat; font-weight: 500; line-height: 31.20px; margin-top: -45px; word-wrap: break-word">
+                                                {{-- Why Australia could be better destiny for your education --}}
+                                                {{$subsub->long_content}}
+                                            </div>
+                                            <div
+                                                style="max-width: 100%; word-wrap: break-word; color: #3d3d3d; font-size: 14px; font-family: Outfit; font-weight: 400; line-height: 30px;">
+                                                @foreach ($subsub->childs as $subsubsub)
+                                                
+                                                    <div  class="left-icon-main" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; ">
+                                                        <div class="left-icon"
+                                                            style=" width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
+                                                            <div
+                                                                style="width: 12px; height: 12px; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                                                                <span
+                                                                    style="color: #3d3d3d; font-size: 10px; line-height: 1; font-weight: bold">&rarr;</span>
+                                                            </div>
+                                                        </div>
+                                                        <div style="flex: 1">
+                                                            {{$subsubsub->short_content}}
+                                                            {{-- Purpose: Surgical masks are designed to provide a barrier and protection
+                                                            against respiratory droplets, including those carrying bacteria and viruses. --}}
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                                {{-- <div style="display: flex; align-items: center; gap: 8px">
+                                                    <div
+                                                        style="margin-top: -27px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
+                                                        <div
+                                                            style="width: 12px; height: 12px; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                                                            <span
+                                                                style="color: #3d3d3d; font-size: 10px; line-height: 1; font-weight: bold">&rarr;</span>
+                                                        </div>
+                                                    </div>
+                                                    <div style="flex: 1">
+                                                        Purpose: Surgical masks are designed to provide a barrier and protection
+                                                        against respiratory droplets, including those carrying bacteria and viruses.
+                                                    </div>
+                                                </div>
+                                                <div style="display: flex; align-items: center; gap: 8px">
+                                                    <div
+                                                        style="margin-top: -27px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
+                                                        <div
+                                                            style="width: 12px; height: 12px; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                                                            <span
+                                                                style="color: #3d3d3d; font-size: 10px; line-height: 1; font-weight: bold">&rarr;</span>
+                                                        </div>
+                                                    </div>
+                                                    <div style="flex: 1">
+                                                        Purpose: Surgical masks are designed to provide a barrier and protection
+                                                        against respiratory droplets, including those carrying bacteria and viruses.
+                                                    </div>
+                                                </div> --}}
+            
+                                                <!-- Repeat the same structure for other points -->
+                                                <div class="unique-button"
+                                                    style="background-color:#CF1312; height: 30px; width: 110px; display: flex; justify-content: center; align-items: center;">
+                                                    <a href="#" class="unique-learn-more" style="color: white;">Explore More</a>
+                                                    <div class="unique-icon" style="color: white;">&rarr;</div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+            
                                     </div>
                                 </div>
                             </div>
-                        @endif
-                    @endforeach
+                        </div>
+                    </div>
                 @endforeach
                 {{-- <div id="Germany" class="tab-pane">
                     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s"
