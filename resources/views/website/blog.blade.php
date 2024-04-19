@@ -23,7 +23,7 @@
                         <!-- <div class="search-blog-p input-container"> -->
                         {{-- <input type="text" class="search-blog-p input-text" placeholder="Search for News"> --}}
                         <form id="searchForm" action="{{ route('search') }}" method="GET">
-                            <input id="searchInput" type="text" name="slug" class="search-blog-p input-text" placeholder="@if(isset($slug2)){{$slug2}} @else Search for News @endif">
+                            <input id="searchInput" type="text" name="slug" class="search-blog-p input-text" value="@if(isset($slug2)){{$slug2}}@endif" placeholder="Search for News">
                             {{-- <button type="submit">Search</button> --}}
                         </form>
                         

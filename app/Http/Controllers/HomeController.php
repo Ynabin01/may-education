@@ -162,14 +162,14 @@ class HomeController extends Controller
         else{
             $pricingplan = null; 
         }
-        if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%photos%")->where('page_type','Group')->latest()->first()!=null){
-            $photos_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%photos%")->where('page_type','Group')->latest()->first()->id;
-            $photos= Navigation::query()->where('parent_page_id',$photos_id)->latest()->get();
-            //return $partners;
-        }
-        else{
-            $photos= null;
-        }
+        // if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%photos%")->where('page_type','Group')->latest()->first()!=null){
+        //     $photos_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%photos%")->where('page_type','Group')->latest()->first()->id;
+        //     $photos= Navigation::query()->where('parent_page_id',$photos_id)->latest()->get();
+        //     //return $partners;
+        // }
+        // else{
+        //     $photos= null;
+        // }
         // if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%jobs%")->where('page_type','Group')->latest()->first()!=null){
         //     $jobs_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%jobs%")->where('page_type','Group')->latest()->first()->id;
         //     $jobs = Navigation::query()->where('parent_page_id',$jobs_id)->orderBy('position','DESC')->get();
@@ -192,8 +192,11 @@ class HomeController extends Controller
         // return $job_categories;
     
         $global_setting = GlobalSetting::all()->first(); 
+        $photos = Navigation::query()->where('id',2650)->where('page_status','1')->first();
+        $blogs = Navigation::query()->where('id',2756)->where('page_status','1')->first();
+
         //return $missons;       
-        return view("website.index")->with(['projectlist'=>$projectlist, 'partners'=>$partners,'offers'=>$offers,'photos'=>$photos,'vacancy'=>$vacancy,'pricingplan'=>$pricingplan,'features'=>$features,'vision'=>$vision,'goal'=>$goal,'services'=>$services,'newsbanner'=>$newsbanner,'job_categories'=>$job_categories,'testimonial'=>$testimonial,'statistics'=>$statistics,'banners'=>$banners, 'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders,'missons'=>$missons,'message'=>$message,'jobs'=>$jobs,'abroad'=>$abroad]);
+        return view("website.index")->with(['blogs'=>$blogs, 'partners'=>$partners,'offers'=>$offers,'photos'=>$photos,'vacancy'=>$vacancy,'pricingplan'=>$pricingplan,'features'=>$features,'vision'=>$vision,'goal'=>$goal,'services'=>$services,'newsbanner'=>$newsbanner,'job_categories'=>$job_categories,'testimonial'=>$testimonial,'statistics'=>$statistics,'banners'=>$banners, 'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders,'missons'=>$missons,'message'=>$message,'jobs'=>$jobs,'abroad'=>$abroad]);
     }
 
 
@@ -545,7 +548,7 @@ class HomeController extends Controller
                 // return "return to view Notice";
             
             if($subcategory_type == "Photo Gallery"){
-                // return "return to page gallary";
+                // return $subcategory_id;
             
                 $photos = NavigationItems::query()->where('navigation_id',$subcategory_id)->latest()->get();
                 return view("website.photogallery")->with(['photos'=>$photos,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);
@@ -743,10 +746,12 @@ class HomeController extends Controller
         return view('website.job-list')->with(['jobs'=>$jobs,'slug1'=>$slug1,]);
     }
     public function GotoGallery($slug){
+        // return "hi";
         $slug1  = "Photos";
         $slug2 = $navigation_id = Navigation::all()->where('nav_name',$slug)->first()->caption;
         // return Navigation::all()->where('id',$subcategory_id);
         $navigation_id = Navigation::all()->where('nav_name',$slug)->first()->id;
+        // return $navigation_id;
         $photos = NavigationItems::query()->where('navigation_id',$navigation_id)->latest()->get();
         return view("website.photogallery")->with(['photos'=>$photos,'slug1'=>$slug1,'slug2'=>$slug2]);
     }

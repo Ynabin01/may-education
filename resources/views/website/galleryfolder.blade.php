@@ -1,6 +1,9 @@
 @extends("layouts.master")
 @section('content')
 
+<?php
+use App\Models\NavigationItems;
+?>
 <!-- breadcrumb start -->
 <div class="container-xxl bg-primary page-header"
         style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
@@ -21,6 +24,9 @@
         <div class="gallery-container">
             <div class="gallery-items">
                 @foreach ($photos->childs as $photo)
+                <?php
+                    $images = NavigationItems::query()->where('navigation_id',$photo->id)->latest()->get();
+                ?>
                 <div class="gallery-item">
                        <a href="{{ route('GOTOGALLERY', $photo->nav_name) }}">
                         <img src="{{ $photo->banner_image }}" alt="">
@@ -29,9 +35,9 @@
                             <div class="details">
                                 <!-- Assuming these details are available in your $photo object -->
                                 <!-- Replace with actual details from your data -->
-                                <div class="info-item">{!! htmlspecialchars_decode($photo->short_content ?? '') !!}</div>
+                                <div class="info-item">{{count($images)}} Pictures</div>
                                 <div class="separator">•</div>
-                                <div class="info-item">{!! htmlspecialchars_decode($photo->long_content ?? '') !!}</div>
+                                <div class="info-item">{{ \Carbon\Carbon::parse($photo->updated_at)->format('M d, Y') }}</div>
                             </div>
                         </div>
                     </a>   
