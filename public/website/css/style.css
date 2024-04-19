@@ -1622,7 +1622,7 @@ a{
 }
 
 .description {
-    text-align: justify;
+    /* text-align: justify; */
     color: #3D3D3D;
     font-size: 16px;
     font-family: Poppins;

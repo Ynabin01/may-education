@@ -27,7 +27,6 @@
                                     </a>
                                 </div>
                             </div>
-
                         </div>
                         @endif
 
@@ -89,14 +88,11 @@
 
                     <!-- Add more gallery items here -->
                 </div>
-
-                <div class="button-wrapper">
-                    <a href="/blog" class="custom-button">
-                        View All
-                        <div class="unique-icon">&rarr;</div>
-                    </a>
+                <br>
+                <div class="unique-button" style="background-color:#CF1312; height: 40px; width: 100px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                    <a href="/blog" class="unique-learn-more" style="color: white;">View All</a>
+                    <div class="unique-icon" style="color: white;">&rarr;</div>
                 </div>
-
             </div>
         </div>
 
