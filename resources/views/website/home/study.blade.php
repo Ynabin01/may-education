@@ -123,11 +123,11 @@
                                                 </div> --}}
             
                                                 <!-- Repeat the same structure for other points -->
-                                                <div class="unique-button"
+                                                {{-- <div class="unique-button"
                                                     style="background-color:#CF1312; height: 30px; width: 110px; display: flex; justify-content: center; align-items: center;">
                                                     <a href="#" class="unique-learn-more" style="color: white;">Explore More</a>
                                                     <div class="unique-icon" style="color: white;">&rarr;</div>
-                                                </div>
+                                                </div> --}}
 
                                             </div>
                                         </div>
