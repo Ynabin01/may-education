@@ -8,6 +8,9 @@
 a{
     text-decoration: none !important;
 }
+.dropdown-item:active{
+    background-color :rgba(207, 19, 18, 1)
+}
 
 @media (min-width:768px) and (max-width:991px) {
     .ifra {
@@ -21,7 +24,58 @@ a{
 
 @media (min-width:768px) and (max-width:1024px) {
     .test-res {
+        margin-left: -153px !important;
+        margin-top: -62px !important;
+    }
+    .quotation-icon {
+        margin-top: -56px;
+    }
+    .mobile-image-container{
+        margin-left: -66px;
+    }
+
+}
+
+@media (min-width:991px) and (max-width:1400px) {
+    .test-res {
         margin-left: -50px !important;
+        margin-top: -60px !important;
+        width: 69%;
+        padding-right: 0;
+    }
+    .testi{
+        margin-bottom: 10px !important;
+    }
+    .quotation-icon {
+        margin-top: 62px;
+        display: block;
+    }
+    .testi-mon{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mobile-image-container{
+        margin-left: 28px;
+    }
+
+}
+
+@media (min-width:1400px) {
+    .mobile-image-container{
+        margin-left: 16px
+    }
+    .test-res {
+        width: 68%;
+        margin-top: -70px !important;
+        margin-left: -51px !important;
+    }
+    .quotation-icon {
+        margin-top: 62px;
+        display: block;
+    }
+    .test-con{
+        max-width: 1080px !important;
     }
 
 }
@@ -51,6 +105,7 @@ a{
     }
 
 }
+
 
 @media (min-width:375px) and (max-width:425px) {
     .custom-images-container {
@@ -155,6 +210,12 @@ a{
     }
     .f-links{
         justify-content: flex-start !important;
+    }
+    .section.know-more-about-a {
+        margin-left: 25px !important;
+    }
+    .abroad-col{
+        flex-direction: column;
     }
 }
 
@@ -482,7 +543,7 @@ a{
 
 .service-item:hover {
     box-shadow: none;
-    border-color: var(--primary);
+    border-color: rgba(207, 19, 18, 1);
 }
 
 .service-item .service-icon,
@@ -672,38 +733,71 @@ a{
         font-size: smaller;
     }
 }
-
+/* 
 @media (max-width: 768px) {
     .quotation-icon {
         margin-right: -13px !important;
         margin-left: auto;
         display: block;
     }
-}
+} */
 
-@media (max-width: 768px) {
-    .mobile-image-container {
-        margin-left: 92px;
-        /* Add margin to the bottom to create space between columns */
-    }
-}
 
-@media (max-width: 767.98px) {
+@media (max-width: 374px) {
     .quotation-icon {
-        margin-right: 42px !important;
+        margin-right: -12px;
         /* Reset the margin-right */
+        margin-top: 62px;
         margin-left: auto;
         /* Set margin-left to auto to center the element */
         display: block;
         /* Ensure the image is displayed as a block element */
     }
+    .mobile-image-container{
+        margin-left: 93px;
+    }
 }
+
+
+@media (min-width: 374px) and (max-width: 424px) {
+    .quotation-icon {
+        margin-right: 14px;
+        /* Reset the margin-right */
+        margin-top: 62px;
+        margin-left: auto;
+        /* Set margin-left to auto to center the element */
+        display: block;
+        /* Ensure the image is displayed as a block element */
+    }
+    .mobile-image-container{
+        margin-left: 90px;
+    }
+}
+
+
+@media (min-width: 376px) and (max-width: 767.98px) {
+    .quotation-icon {
+        margin-right: 40px !important;
+        /* Reset the margin-right */
+        margin-top: 62px;
+        margin-left: auto;
+        /* Set margin-left to auto to center the element */
+        display: block;
+        /* Ensure the image is displayed as a block element */
+    }
+    .mobile-image-container{
+        margin-left: 95px;
+    }
+}
+
 
 /* CSS for screens between 768px and 991.98px (small desktops) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .quotation-icon {
-        margin-right: 44px !important;
+        margin-right: 176px !important;
         /* Reset the margin-right */
+        margin-top: 62px;
+
         margin-left: auto;
         /* Set margin-left to auto to center the element */
         display: block;

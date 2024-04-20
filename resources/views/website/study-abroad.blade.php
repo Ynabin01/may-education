@@ -41,28 +41,29 @@
             
             <div class="container know-more-about-a">
                 <div class="section know-more-about-a">
-                    <div class="subsection know-more-about-a">
-                        @php 
-                        $listCount = count($slug2->childs[1]->childs);
-                        $middleIndex = intdiv($listCount, 2); // Calculate middle index using integer division
-                    @endphp
-                    
-                    @php $test = 0 @endphp
-                    @foreach ($slug2->childs[1]->childs as $index => $lists)
-                        <div class="sub-content know-more-about-a">
-                            <div class="sub-title know-more-about-a">{{$lists->caption}}</div>
-                            <div class="sub-paragraph know-more-about-a">{!! htmlspecialchars_decode($lists->short_content) !!}</div>
-                        </div>
-                        @if ($loop->iteration == $middleIndex + 1)
-                            @php $test++ @endphp
+                    <div class="row abroad-col">
+                        <div class="subsection know-more-about-a col-xs-12">
+                            @php 
+                            $listCount = count($slug2->childs[1]->childs);
+                            $middleIndex = intdiv($listCount, 2); // Calculate middle index using integer division
+                        @endphp
+                        
+                        @php $test = 0 @endphp
+                        @foreach ($slug2->childs[1]->childs as $index => $lists)
+                            <div class="sub-content know-more-about-a">
+                                <div class="sub-title know-more-about-a">{{$lists->caption}}</div>
+                                <div class="sub-paragraph know-more-about-a">{!! htmlspecialchars_decode($lists->short_content) !!}</div>
                             </div>
-                            <div class="subsection know-more-about-a">
+                            @if ($loop->iteration == $middleIndex + 1)
+                                @php $test++ @endphp
+                                </div>
+                                <div class="subsection know-more-about-a col-xs-12">
+                            @endif
+                        @endforeach
+                        @if ($test != 0)
+                            </div>  
                         @endif
-                    @endforeach
-                    @if ($test != 0)
-                        </div>  
-                    @endif
-                    
+                        
 
                         {{-- <div class="sub-content know-more-about-a">
                             <div class="sub-title know-more-about-a">Student Visa Process</div>
@@ -99,6 +100,7 @@
                                 on form 157A and pay the current visa application charge.</div>
                         </div>
                     </div> --}}
+                    </div>
                 </div>
             </div>
         @endif

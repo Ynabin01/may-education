@@ -18,11 +18,11 @@
 </div> -->
 
 <div class="container-xxl py-6" style="background-color: #ffff;">
-    <div class="container" style="margin-top: -110px;">
-        <h2 class="mb-5" style="color: #212529; font-size: 24px; font-family: Montserrat; font-weight: 500; line-height: 24px; letter-spacing: 2px; font-size: 18px; text-align: center; margin-top: 136px; word-wrap: break-word">
+    <div class="container test-con" style="margin-top: -110px;">
+        <h2 class="mb-5 testi" style="color: #212529; font-size: 24px; font-family: Montserrat; font-weight: 500; line-height: 24px; letter-spacing: 2px; font-size: 18px; text-align: center; margin-top: 136px; word-wrap: break-word">
             Testimonial
         </h2>
-        <div id="testimonial-carousel" class="carousel slide text-center carousel-dark" data-bs-ride="carousel">
+        <div id="testimonial-carousel" class="carousel slide text-center carousel-dark testi-mon" data-bs-ride="carousel">
             <div class="carousel-inner">
                 @foreach ($testimonial as $index => $test)
                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-lg-7 col-md-6 test-res" style="margin-top: -90px; margin-left: -90px"> <!-- Adjusted margins -->
                                 <img class="quotation-icon" loading="lazy" alt="" src="website/img/public/quotation.svg"
-                                    style="margin-top: 55px !important; margin-right: 671px;"> <!-- Adjusted margin-top -->
+                                    style="margin-top: 55px margin-right: 671px;"> <!-- Adjusted margin-top -->
                                 <p class="mb-1" style="text-align: justify; margin-top: 10px;">{!! htmlspecialchars_decode($test->long_content ?? '') !!}</p>
                                 <h6 style="text-align: justify; margin-bottom: 0;">{!! htmlspecialchars_decode($test->caption ?? '') !!}</h6> <!-- Removed bottom margin -->
                                 <p style="text-align: justify; margin-bottom: 0;">{!! htmlspecialchars_decode($test->short_content ?? '') !!}</p> <!-- Removed bottom margin -->
