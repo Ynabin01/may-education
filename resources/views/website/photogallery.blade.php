@@ -1,11 +1,9 @@
 @extends("layouts.master")
 @section('content')
-
-    <!-- breadcrumb start -->
-    <div class="container-xxl bg-primary page-header"
+<div class="container-xxl bg-primary page-header"
         style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
-        <div class="container">
-            <div class="bread-container">
+        <div class="container nichha">
+            <div class="bread-container bread-auto">
                 <div>Home</div>
                 <div class="divider"> / </div>
                 <div>{{$slug1->caption ?? $slug1 }} </div>
@@ -13,8 +11,8 @@
             <div class="b-title">{{$slug2->caption ?? $slug2 }}</div>
         </div>
     </div>
-        <br>
     <!-- breadcrumb end -->
+    
  
  
         <!-- gallery start -->
