@@ -246,6 +246,7 @@ a{
     }
     .do-gray{
         padding-bottom: 0 !important;
+        margin-bottom: -127px;
     }
     .myImg {
         max-width: unset;
