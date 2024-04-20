@@ -1,3 +1,4 @@
+<div class="do-gray" style="background-color: white;padding-bottom: 35px;">
 <div class="b-container blog-home" style="background-color: #CF1312; height: 300px; margin-bottom: 115px; margin-top: -95px;">
             <div class="gallery-container">
                 <br>
@@ -99,4 +100,5 @@
         <!-- Blog End --> <br>
         <br>
         <br>
+</div>
 

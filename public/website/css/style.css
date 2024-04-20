@@ -11,6 +11,10 @@ a{
 .dropdown-item:active{
     background-color :rgba(207, 19, 18, 1)
 }
+.bread-auto{
+    width: max-content;
+    padding-right: 60px !important;
+}
 
 @media (min-width:768px) and (max-width:991px) {
     .ifra {
@@ -19,6 +23,18 @@ a{
 
     .img-dot {
         top: 240px !important
+    }
+}
+
+@media (min-width:991px){
+    .desktop-top{
+        margin-top: -97px;
+    }
+    .aus-abroad{
+    margin-top: -20px !important;
+    }
+    .test-con{
+        margin-top: -150px !important;
     }
 }
 
@@ -57,6 +73,10 @@ a{
     }
     .mobile-image-container{
         margin-left: 28px;
+    }
+    .row-gallery-section .column img {
+        width: 100%;
+        height: auto;
     }
 
 }
@@ -124,6 +144,13 @@ a{
 
 
 @media(max-width:768px) {
+    .page-header{
+        margin-top: -42px;
+        height: 185px;
+    }
+    .nichha{
+        padding-top: 24px;
+    }
     .logo-link {
         display: flex;
         flex-direction: column;
@@ -189,6 +216,9 @@ a{
     .big-screen-office{
         display: none !important;
     }
+    .kamkar{
+        font-size: 24px;
+    }
 }
 
 @media(max-width:321px){
@@ -196,23 +226,50 @@ a{
         font-size: 12px;
     }
 }
+.row-gallery-section .column{
+    margin-bottom: 10px;
+}
 
 @media(max-width:426px) {
     .custom-images-container img {
         max-width: unset !important;
         width: 160px !important;
     }
-
+    .testo-nichha{
+        padding-top: 1px !important;
+    }
+    .bottom-mobile-upri{
+        margin-top: 0 !important;
+    }
     .custom-images-container {
         margin-left: -24px !important;
     }
-
-    .unique-statistics {
-        margin-left: -40px;
+    .do-gray{
+        padding-bottom: 0 !important;
     }
+    .myImg {
+        max-width: unset;
+        width: 100% !important;
+        height: auto !important;
+    }
+    .unique-statistics {
+        margin-left: -4px;
+    }
+    .kamkar{
+        font-size: 15px !important;
+        margin-left: 18px;
 
+    }
+    .modal-content {
+        width: 83%;
+    }
+    .abroad-mobile{
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
     .aus-abroad {
         padding-left: 35px;
+        margin-bottom: 0;
     }
     .left-icon-main{
         align-items: unset !important;
@@ -256,7 +313,15 @@ a{
         justify-content: space-between;
         align-items: center;
     }
-
+    .unique-stat i {
+        font-size: 28px !important;
+    }
+    .unique-number {
+        font-size: 14px !important;
+    }
+    .unique-label {
+        font-size: 13px !important;
+    }
 }
 
 
@@ -2319,10 +2384,6 @@ a{
     word-wrap: break-word;
 }
 
-.bread-container {
-    max-width: 13em;
-    /* Adjust the maximum width of the container */
-}
 
 
 /* Media query for responsiveness */

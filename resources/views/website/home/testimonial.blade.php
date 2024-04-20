@@ -17,7 +17,7 @@
     </div>
 </div> -->
 
-<div class="container-xxl py-6" style="background-color: #ffff;">
+<div class="container-xxl py-6 testo-nichha" style="background-color: #ffff; padding-bottom: 10px;">
     <div class="container test-con" style="margin-top: -110px;">
         <h2 class="mb-5 testi" style="color: #212529; font-size: 24px; font-family: Montserrat; font-weight: 500; line-height: 24px; letter-spacing: 2px; font-size: 18px; text-align: center; margin-top: 136px; word-wrap: break-word">
             Testimonial

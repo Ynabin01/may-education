@@ -1,7 +1,7 @@
 <?php
 use App\Models\NavigationItems;
 ?>
-<div class="gallery-container">
+<div class="gallery-container" style="    margin-bottom: 0;">
         <h2 class="mb-5"
             style="color: #212529; font-size: 24px; font-family: Montserrat; font-weight: 500; line-height: 24px; letter-spacing: 2px;  font-size: 18px; text-align: center; word-wrap: break-word">
             Gallery</h2>

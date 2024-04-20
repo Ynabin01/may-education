@@ -1,7 +1,7 @@
 
 
-    <div id="unique-container" class="container py-6">
-        <div class="row align-items-center">
+    <div id="unique-container" class="container py-6" style="margin-bottom: 0 !important;">
+        <div class="row align-items-center desktop-top">
             <div class="col-lg-6">
                 <img class="img-fluid ab-img custom-image" src="{!! htmlspecialchars_decode($about->banner_image ?? '') !!}">
             </div>                

@@ -53,7 +53,7 @@
                 @foreach ($abroad as $subsub)
                     @php $innerIteration++; @endphp
                     <div id="abroad{{$subsub->id}}" class="tab-pane @if ($innerIteration == 1)active @endif">
-                        <div class="container-fluid py-5 fadeInUp" data-wow-delay="0.1s"
+                        <div class="container-fluid py-5 fadeInUp abroad-mobile" data-wow-delay="0.1s"
                             style="margin-top: 20px; margin-bottom: -60px;">
                             <div class="container" style="margin-bottom: 40px;">
                                 <div class="row g-5">
@@ -67,9 +67,9 @@
                                             </div>
                                         </div>
             
-                                        <div class="col-lg-6 order-lg-2 order-1" style="margin-top: 80px">
+                                        <div class="col-lg-6 order-lg-2 order-1 kamkar" style="margin-top: 80px">
                                             <div
-                                                style="margin-bottom: 14px; width: 100%; color: #212529; font-size: 24px; font-family: Montserrat; font-weight: 500; line-height: 31.20px; margin-top: -45px; word-wrap: break-word">
+                                                style="margin-bottom: 14px; width: 100%; color: #212529; font-family: Montserrat; font-weight: 500; line-height: 31.20px; margin-top: -45px; word-wrap: break-word">
                                                 {{-- Why Australia could be better destiny for your education --}}
                                                 {{$subsub->long_content}}
                                             </div>
@@ -77,7 +77,7 @@
                                                 style="max-width: 100%; word-wrap: break-word; color: #3d3d3d; font-size: 14px; font-family: Outfit; font-weight: 400; line-height: 30px;">
                                                 @foreach ($subsub->childs as $subsubsub)
                                                 
-                                                    <div  class="left-icon-main" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; ">
+                                                    <div  class="left-icon-main" style="display: flex; align-items: center; gap: 8px; ">
                                                         <div class="left-icon"
                                                             style=" width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
                                                             <div

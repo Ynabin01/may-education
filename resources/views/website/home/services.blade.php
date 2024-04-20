@@ -1,6 +1,6 @@
 
 
-<div class="container-xxl py-6" style="background-color: #ffff;">
+<div class="container-xxl py-6" style="background-color: #ffff; padding-bottom: 30px;">
         <div class="inside_body">
 
             <div class="container">
