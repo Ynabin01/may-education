@@ -17,7 +17,7 @@
     <!-- breadcrumb end -->
 
             <!-- Blog Start -->
-            <section class="blog-list px-3 py-5 p-md-5">
+            <section class="blog-list px-3 py-5 p-md-5 kar-barka-sar">
                 <div class="row blog-grid">
                     <div class="search-blog-p  col" style="margin-bottom: 50px;">
                         <!-- <div class="search-blog-p input-container"> -->
@@ -94,7 +94,11 @@
                                                 <div class="time">{{$group_project->icon_image_caption ?? ""}}</div>
                                             </div>
                                         </div><!--//media-body-->
-                                        <img class="ml-3 img-fluid post-thumb d-none d-md-block"
+                                        <img class="ml-3 img-fluid post-thumb d-none d-md-block" style="
+                                        max-height: 150px;
+                                        height: 97px;
+                                        width: 110px;
+                                    "
                                             src="{{$group_project->banner_image ?? ""}}" alt="image">
                                     </div>
                                 </div><!--//media-->

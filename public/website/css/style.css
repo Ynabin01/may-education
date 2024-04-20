@@ -36,6 +36,10 @@ a{
     .test-con{
         margin-top: -150px !important;
     }
+    .kar-barka-sar
+    {
+    padding: 3rem 8rem 3rem 8rem !important;
+    }
 }
 
 @media (min-width:768px) and (max-width:1024px) {

@@ -198,7 +198,7 @@
 
     <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-3 wow fadeIn bottom-mobile-upri" data-wow-delay="0.1s"
-        style="margin-top: 3rem;     background-color: #F3F6F8 !important;">
+        style="margin-top: 3rem;     background-color: white !important;">
         <div class="container py-3 ">
             <div class="row" style="align-items: center; justify-content: center;">
 
