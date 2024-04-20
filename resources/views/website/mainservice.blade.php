@@ -1,18 +1,17 @@
 @extends("layouts.master")
 @section('content')
 
-   <!-- breadcrumb start -->
-   <div class="container-xxl bg-primary page-header"
-            style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
-            <div class="container">
-                <div class="bread-container">
-                    <div>Home</div>
-                    <div class="divider"> / </div>
-                    <div>{{$slug1->caption ?? ""}}</div>
-                </div>
-                <div class="b-title">{{$slug1->caption ?? ""}}</div>
+<div class="container-xxl bg-primary page-header"
+        style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
+        <div class="container nichha">
+            <div class="bread-container bread-auto">
+                <div>Home</div>
+                <div class="divider"> / </div>
+                <div>{{$slug1->caption ?? $slug1 }} </div>
             </div>
+            <div class="b-title">{{$slug1->caption ?? $slug1 }}</div>
         </div>
+    </div>
     <!-- breadcrumb end -->
 
     <div class="container-xxl py-6" style="background-color: #ffff;">
@@ -83,5 +82,6 @@
             <i class="gallery-chevron fas fa-chevron-right"></i>
         </div>
     </div> --}}
-
+<br>
+<br>
 @endsection

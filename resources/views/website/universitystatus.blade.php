@@ -1,6 +1,7 @@
 @extends("layouts.master")
 @section('content')
  
+
  <!-- breadcrumb start -->
  <div class="container-xxl bg-primary page-header"
         style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
