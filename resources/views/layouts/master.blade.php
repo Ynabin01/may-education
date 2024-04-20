@@ -72,16 +72,23 @@
 <body>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <p style="margin-top: 10px; margin-bottom: 10px;">
+                <div class="col-md-6 col-sm-12 for-small">
+                    <p style="margin-top: 10px; margin-bottom: 10px;" class="chota-size">
                         <span>&nbsp;<i class="fas fa-envelope text-black"></i> <a href="mailto:info@may.edu.np"
                                 style="color: black;">{{ $global_setting->site_email }}</a></span>
                         <span style="margin-left: 10px;"><i class="fas fa-phone-alt text-black"></i> <a
                                 href="tel:+977 01-4240108" style="color: black;">{{ $global_setting->phone }}</a></span>
                     </p>
+                    <div class="top-bar-social v-social office-where-show" style="display: inline-block; ">
+                        <a href="{{ $global_setting->facebook ?? '#' }}" target="_blank"><i class="fab fa-facebook-f"
+                                style="margin-right: 10px;"></i></a>
+                        <a href="{{ $global_setting->twitter ?? '#' }}" target="_blank"><i class="fab fa-twitter"
+                                style="margin-right: 10px;"></i></a>
+                        <a href="{{ $global_setting->linkedin ?? '#' }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6 text-right d-none d-sm-block v-social-text-align f-links" style="
-                display: flex !important;
+                <div class="office-where col-md-6 col-sm-6 col-xs-6 text-right d-none d-sm-block v-social-text-align f-links" style="
                 flex-direction: row;
                 justify-content: flex-end;
                 align-items: center;
@@ -111,7 +118,7 @@
     <div class="container-xxl position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-0"
             style="background-color: rgba(207, 19, 18, 1); height: 60px;">
-            <a href="index.html" class="navbar-brand d-flex justify-content-center align-items-center p-0"
+            <a href="index.html" class="image-hder navbar-brand d-flex justify-content-center align-items-center p-0"
                 style="height: 100%; width: 160px; margin-left: 60px;">
                 <img src="/uploads/icons/{{ $global_setting->site_logo }}" alt="Logo" style="width: 120px;">
             </a>
@@ -136,8 +143,8 @@
                     /* Change text color on hover */
                 }
             </style>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0" style="margin-right: 85px;">
+            <div class="collapse navbar-collapse nav-border-small" id="navbarCollapse" style="">
+                <div class="navbar-nav ms-auto py-0" style="width: 100%; padding:15px; margin-bottom: 10px;">
                     <a href="/" class="nav-item nav-link active">Home</a>
                     
                     @foreach ($menus as $menu)
@@ -159,10 +166,19 @@
                                     @endif
                                 </div>
                             @endif
+                            
                         </div>
                     @endforeach
                     {{-- <a href="/enquiry" class="nav-item nav-link">Enquiry</a> --}}
                     <a href="/contact" class="nav-item nav-link">Contact</a>
+                       
+                    <div class="nav-item dropdown big-screen-office" style="">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            style="color: black;">Tinkune Office</a>
+                        <div class="dropdown-menu m-0" style="min-width: 100px;"> <!-- Adjust min-width as needed -->
+                            <a href="#" class="dropdown-item" style="color: black;">Koteshwor Office</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>

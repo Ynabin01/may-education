@@ -116,7 +116,7 @@
                                 <div class="position-relative h-100">
                                     <img class="wow zoomIn img-fluid" data-wow-delay="0.9s" src="{{$slug2->childs[2]->banner_image}}"
                                         alt="Image"
-                                        style=" margin-left: 30px; width: 80%; height: auto; margin-bottom: 20px; display: block; max-width: 80%;" />
+                                        style=" margin-left: 30px; width: 80%; height: 110%; margin-bottom: 20px; display: block; max-width: 80%;" />
                                 </div>
                             </div>
 
@@ -128,7 +128,7 @@
                                     style="max-width: 100%; word-wrap: break-word; color: #3d3d3d; font-size: 14px; font-family: Outfit; font-weight: 400; line-height: 30px;">
                                     @foreach ($slug2->childs[2]->childs as $subsubsub)
                                                             
-                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; ">
+                                    <div style="display: flex; align-items: center; gap: 8px; ">
                                         <div
                                             style=" width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
                                             <div
