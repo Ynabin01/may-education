@@ -242,6 +242,15 @@ a{
 }
 
 @media(max-width:426px) {
+    .imgantim{
+        width: 100% !important;
+    }
+    .tuantim{
+        width: 100% !important;
+    }
+    .antim{
+        width: 100% !important;
+    }
     .custom-images-container img {
         max-width: unset !important;
         width: 160px !important;

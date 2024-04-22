@@ -43,9 +43,9 @@
             <!-- Universities Start -->
             <div class="container-xxl py-6" style="background-color: white;">
                 <div class="uni-page-container">
-                    <div class="uni-page-content">
+                    <div class="uni-page-content antim">
                         <div class="uni-page-title">Know More</div>
-                        <div class="uni-page-description">{{$slug2->childs->first()->short_content ?? ""}}</div>
+                        <div class="uni-page-description tuantim">{{$slug2->childs->first()->short_content ?? ""}}</div>
                         <div class="uni-page-info">
                             <div class="uni-page-info-item">
                                 <span class="uni-page-info-label">Country:</span>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
 
-                    <div class="uni-page-image-container">
+                    <div class="uni-page-image-container imgantim">
                         <img class="uni-page-image" src="{{$slug2->banner_image ?? ""}}" alt="Adelphi University Logo">
                     </div>
                 </div>
