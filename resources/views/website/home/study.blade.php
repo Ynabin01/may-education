@@ -77,9 +77,9 @@
                                                 style="max-width: 100%; word-wrap: break-word; color: #3d3d3d; font-size: 14px; font-family: Outfit; font-weight: 400; line-height: 30px;">
                                                 @foreach ($subsub->childs as $subsubsub)
                                                 
-                                                    <div  class="left-icon-main" style="display: flex; align-items: center; gap: 8px; ">
+                                                    <div  class="left-icon-main" style="display: flex; gap: 8px; ">
                                                         <div class="left-icon"
-                                                            style=" width: 20px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
+                                                            style=" width: 20px;margin-top: 7px; height: 20px; border-radius: 50%; border: 2px solid #3d3d3d; display: flex; align-items: center; justify-content: center;">
                                                             <div
                                                                 style="width: 12px; height: 12px; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
                                                                 <span
