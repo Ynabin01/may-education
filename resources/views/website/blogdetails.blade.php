@@ -107,7 +107,7 @@
                                             <div class="blog-details-content">
                                                 <div class="blog-details-title">{{$group_project->caption ?? ""}}</div>
                                                 <div class="blog-details-read-more">
-                                                    <a href="{{$slug1->nav_name}}/{{$group_project->nav_name ?? ""}}">
+                                                    <a href="/{{$slug1->nav_name}}/{{$group_project->nav_name ?? ""}}">
                                                         <div class="blog-details-read-more-link">Read More</div>
                                                     </a>
                                                             <i class="fas fa-arrow-right"></i>

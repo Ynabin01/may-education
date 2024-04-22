@@ -332,7 +332,12 @@ class HomeController extends Controller
         }
         elseif($menu == "blog"){
             // return "hlo";
-            $blogs = $slug1->childs()->paginate(5);
+            // $blogs = $slug1->childs()->paginate(5);
+
+            $contentFilter = request()->input('content');    
+            $blogs = $slug1->childs()->where('long_content', $contentFilter)->paginate(5)->appends(['content' => $contentFilter]);
+
+            // return $filteredBlogs;
             return view("website.blog")->with(['blogs'=>$blogs, 'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>""]);
 
         }
@@ -666,7 +671,9 @@ class HomeController extends Controller
     public function search(Request $req){
 
         $slug = $req->input('slug');
-        // return $slug;
+        $contentFilter = request()->input('content');    
+
+        // return $slug.$contentFilter;
       
         // $blogs = Navigation::where('parent_page_id', 2756)
         //         ->where(function($query) use ($slug) {
@@ -685,6 +692,7 @@ class HomeController extends Controller
         //         ->paginate(5);
         
         $blogs = Navigation::where('parent_page_id', 2756)
+                        ->where('long_content', $contentFilter)
                         ->where(function($query) use ($slug) {
                             $query->where('caption', 'LIKE', '%' . $slug . '%')
                                 ->orWhereRaw("MONTHNAME(updated_at) LIKE ?", ['%' . $slug . '%'])

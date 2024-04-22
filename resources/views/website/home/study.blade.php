@@ -73,7 +73,7 @@
                                                 {{-- Why Australia could be better destiny for your education --}}
                                                 {{$subsub->long_content}}
                                             </div>
-                                            <div
+                                            <div class="tuhoaajo"
                                                 style="max-width: 100%; word-wrap: break-word; color: #3d3d3d; font-size: 14px; font-family: Outfit; font-weight: 400; line-height: 30px;">
                                                 @foreach ($subsub->childs as $subsubsub)
                                                 
@@ -123,11 +123,12 @@
                                                 </div> --}}
             
                                                 <!-- Repeat the same structure for other points -->
-                                                {{-- <div class="unique-button"
-                                                    style="background-color:#CF1312; height: 30px; width: 110px; display: flex; justify-content: center; align-items: center;">
-                                                    <a href="#" class="unique-learn-more" style="color: white;">Explore More</a>
+                                                <div class="unique-button"
+                                                    style="background-color:#CF1312; height: 30px;margin-top: 10px;
+                                                    width: 122px; display: flex; justify-content: center; align-items: center;">
+                                                    <a href="{{$subsub->short_content}}" class="unique-learn-more" style="     margin-left: 4px;color: white;">Explore More</a>
                                                     <div class="unique-icon" style="color: white;">&rarr;</div>
-                                                </div> --}}
+                                                </div>
 
                                             </div>
                                         </div>

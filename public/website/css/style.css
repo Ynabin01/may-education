@@ -40,6 +40,12 @@ a{
     {
     padding: 3rem 8rem 3rem 8rem !important;
     }
+    .kamkar {
+        margin-top: 116px !important;
+    }
+    .tuhoaajo{
+        font-size: 20px !important;
+    }
 }
 
 @media (min-width:768px) and (max-width:1024px) {
@@ -998,7 +1004,7 @@ a{
 .footer .btn.btn-link::before {
     position: relative;
     content: "\f105";
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 900;
     margin-right: 10px;
 }
@@ -1034,7 +1040,7 @@ a{
         width: 100%;
         color: #212529;
         font-size: 14px;
-        font-family: Montserrat !important;
+        font-family: 'Montserrat' !important;
         font-weight: 600;
         line-height: 18px;
         word-wrap: break-word;
@@ -1045,7 +1051,7 @@ a{
         text-decoration: none;
         color: #212529;
         font-size: 12px;
-        font-family: Montserrat !important;
+        font-family: 'Montserrat' !important;
         font-weight: 400;
         line-height: 16px;
         display: block;
@@ -1518,7 +1524,7 @@ a{
 .study-title.nabin {
     color: #212529;
     font-size: 24px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: 24px;
@@ -1533,8 +1539,8 @@ a{
     padding: 16px;
     color: rgba(33, 37, 41, 0.80);
     font-size: 16px;
-    font-family: Poppins;
-    font-weight: 500;
+    font-family: 'Poppins';
+    font-weight: 500;   
     line-height: 1.2;
     cursor: pointer;
 }
@@ -1559,7 +1565,7 @@ a{
 .study-info-title.nabin {
     color: #212529;
     font-size: 20px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: 24px;
@@ -1821,7 +1827,7 @@ a{
 .title {
     color: #3D3D3D;
     font-size: 18px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 700;
     line-height: 23.40px;
     word-wrap: break-word;
@@ -1831,7 +1837,7 @@ a{
     /* text-align: justify; */
     color: #3D3D3D;
     font-size: 16px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 24px;
     word-wrap: break-word;
@@ -1929,7 +1935,7 @@ a{
 .indicator-number {
     color: #3D3D3D;
     font-size: 14px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 600;
     line-height: 14px;
     word-wrap: break-word;
@@ -1996,7 +2002,7 @@ a{
 .contact-title {
     color: #212529;
     font-size: 24px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 2px;
@@ -2013,7 +2019,7 @@ a{
 .contact-label {
     color: #212529;
     font-size: 18px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 600;
     line-height: 23.40px;
     word-wrap: break-word;
@@ -2022,7 +2028,7 @@ a{
 .contact-value {
     color: #3D3D3D;
     font-size: 16px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 24px;
     word-wrap: break-word;
@@ -2098,7 +2104,7 @@ a{
     text-align: center;
     color: #6C757D;
     font-size: 12px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 12px;
     word-wrap: break-word;
@@ -2108,7 +2114,7 @@ a{
     align-self: stretch;
     color: #343A40;
     font-size: 16px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 700;
     line-height: 20.80px;
     word-wrap: break-word;
@@ -2118,7 +2124,7 @@ a{
     align-self: stretch;
     color: #343A40;
     font-size: 16px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 24px;
     word-wrap: break-word;
@@ -2143,7 +2149,7 @@ a{
     display: flex;
     color: #495057;
     font-size: 12px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 12px;
     word-wrap: break-word;
@@ -2357,7 +2363,7 @@ a{
 .breadcrumb-item {
     color: white;
     font-size: 12px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 18px;
     word-wrap: break-word;
@@ -2368,7 +2374,7 @@ a{
 .divider {
     color: white;
     font-size: 12px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 18px;
     margin: 0 6px;
@@ -2384,7 +2390,7 @@ a{
     width: 100%;
     color: white;
     font-size: 35px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 600;
     line-height: 62.40px;
     word-wrap: break-word;
@@ -2435,7 +2441,7 @@ a{
 .uni-page-title {
     color: #3D3D3D;
     font-size: 24px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 700;
     line-height: 31.20px;
     word-wrap: break-word;
@@ -2446,7 +2452,7 @@ a{
     text-align: left;
     color: #3D3D3D;
     font-size: 16px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 24px;
     word-wrap: break-word;
@@ -2464,7 +2470,7 @@ a{
 .uni-page-info-label {
     color: #3D3D3D;
     font-size: 16px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 500;
     line-height: 24px;
     margin-right: 8px;
@@ -2473,7 +2479,7 @@ a{
 .uni-page-info-value {
     color: #3D3D3D;
     font-size: 16px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 24px;
 }
@@ -2509,7 +2515,7 @@ a{
     margin-top: 35px;
     color: #3D3D3D;
     font-size: 24px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 700;
     line-height: 31.20px;
     word-wrap: break-word;
@@ -2519,7 +2525,7 @@ a{
 .uni-page-header-description {
     color: #616161;
     font-size: 14px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 21px;
     word-wrap: break-word;
@@ -2540,7 +2546,7 @@ a{
 .uni-page-faculty-title {
     color: #222222;
     font-size: 18px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 600;
     line-height: 23.40px;
     word-wrap: break-word;
@@ -2551,7 +2557,7 @@ a{
     text-align: justify;
     color: #616161;
     font-size: 16px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 24px;
     word-wrap: break-word;
@@ -2610,7 +2616,7 @@ a{
     border-bottom: 1px rgba(61, 61, 61, 0.24) solid;
     color: #3D3D3D;
     font-size: 16px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 24px;
 }
@@ -2747,7 +2753,7 @@ a{
     flex: 1 1 0;
     color: #ADB5BD;
     font-size: 12px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 24px;
     word-wrap: break-word;
@@ -2808,7 +2814,7 @@ a{
     align-self: stretch;
     color: #3F464B;
     font-size: 18px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 700;
     line-height: 23.40px;
     word-wrap: break-word;
@@ -2848,7 +2854,7 @@ a{
 .search-blog-p .button-text {
     color: #3F464B;
     font-size: 12px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 12px;
     word-wrap: break-word;
@@ -2873,7 +2879,7 @@ a{
     display: flex;
     color: #495057;
     font-size: 12px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 12px;
     word-wrap: break-word;
@@ -2889,7 +2895,7 @@ a{
 .small-button-blog-b .time {
     color: #495057;
     font-size: 12px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 12px;
     word-wrap: break-word;
@@ -3033,7 +3039,7 @@ a{
 .sub-title.know-more-about-a {
     color: #222222;
     font-size: 18px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 600;
     line-height: 23.40px;
     word-wrap: break-word;
@@ -3043,7 +3049,7 @@ a{
     text-align: justify;
     color: #616161;
     font-size: 16px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 24px;
     word-wrap: break-word;
@@ -3057,7 +3063,7 @@ a{
 .header-a-page-k .title {
     color: #3D3D3D;
     font-size: 24px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 700;
     line-height: 31.20px;
     word-wrap: break-word;
@@ -3067,7 +3073,7 @@ a{
 .header-a-page-k .description {
     color: #616161;
     font-size: 14px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 21px;
     word-wrap: break-word;
@@ -3096,7 +3102,7 @@ a{
     text-align: center;
     color: #3D3D3D;
     font-size: 24px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 700;
     line-height: 31.20px;
     word-wrap: break-word;
@@ -3157,7 +3163,7 @@ a{
 .title.client-logo-study {
     color: #212529;
     font-size: 24px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 500;
     line-height: 24px;
     word-wrap: break-word;
@@ -3235,7 +3241,7 @@ a{
 .title.apply-n {
     color: #212529;
     font-size: 18px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: 600;
     margin-bottom: 12px;
 }
@@ -3281,7 +3287,7 @@ a{
 .send-message button {
     color: white;
     font-size: 16px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 24px;
     cursor: pointer;
@@ -3443,7 +3449,7 @@ a{
         /* width: 648px; */
         color: #3D3D3D;
         font-size: 18px;
-        font-family: Montserrat;
+        font-family: 'Montserrat';
         font-weight: 700;
         line-height: 23.40px;
         word-wrap: break-word;
@@ -3461,7 +3467,7 @@ a{
         border-radius: 4px;
         color: #495057;
         font-size: 12px;
-        font-family: Poppins;
+        font-family: 'Poppins';
         font-weight: 400;
         line-height: 12px;
         word-wrap: break-word;
