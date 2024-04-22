@@ -14,7 +14,7 @@
                         {!! htmlspecialchars_decode($about->long_content ?? '') !!}
                     </div>
                     <div class="unique-button"
-                        style="background-color:#CF1312; height: 40px; width: 120px; display: flex; justify-content: center; align-items: center;">
+                        style="background-color:#CF1312; height: 40px; width: 130px; display: flex; justify-content: center; align-items: center;">
                         <a href="/about-one/guidance-session" class="unique-learn-more" style="color: white;">Explore More</a>
                         <div class="unique-icon" style="color: white;">&rarr;</div>
                     </div>
