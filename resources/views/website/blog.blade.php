@@ -1,6 +1,10 @@
 @extends("layouts.master")
 @section('content')
-
+<style>
+    body{
+        background-color: white;
+    }
+  </style>
    
 <div class="container-xxl bg-primary page-header"
         style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
@@ -24,7 +28,8 @@
                         <!-- <div class="search-blog-p input-container"> -->
                         {{-- <input type="text" class="search-blog-p input-text" placeholder="Search for News"> --}}
                         <form id="searchForm" action="{{ route('search') }}" method="GET">
-                            <input id="searchInput" type="text" name="slug" class="search-blog-p input-text" value="@if(isset($slug2)){{$slug2}}@endif" placeholder="Search for News">
+                            <input id="searchInput" type="text" name="slug" style="padding-left: 13px;font-size: 15px;"  class="search-blog-p input-text" value="@if(isset($slug2)){{$slug2}}@endif" placeholder="Search for News">
+                            <input id="type" type="hidden" name="content" class="search-blog-p input-text" value="{{request()->input('content')}}" placeholder="Search for News">
                             {{-- <button type="submit">Search</button> --}}
                         </form>
                         
@@ -41,21 +46,24 @@
                         </script>
                         
                         <!-- </div> -->
-                        <div class="search-blog-p title">Discover More</div>
+                        <div class="search-blog-p title" style="    margin-top: 15px;">Discover More</div>
                         <div class="search-blog-p button-container">
                             <div class="search-blog-p button-group">
-                                <div class="search-blog-p button">
-                                    <div class="search-blog-p button-text">News</div>
-                                </div>
-                                <div class="search-blog-p button">
-                                    <div class="search-blog-p button-text">Blogs</div>
-                                </div>
-                                <div class="search-blog-p button">
-                                    <div class="search-blog-p button-text">Notices</div>
-                                </div>
-                                <div class="search-blog-p button">
-                                    <div class="search-blog-p button-text">News</div>
-                                </div>
+                                <a href="/blog?content=news">
+                                    <div class="search-blog-p button">
+                                        <div class="search-blog-p button-text">News</div>
+                                    </div>
+                                </a>
+                                <a href="/blog?content=blogs">
+                                    <div class="search-blog-p button">
+                                        <div class="search-blog-p button-text">Blogs</div>
+                                    </div>
+                                </a>
+                                <a href="/blog?content=notices">
+                                    <div class="search-blog-p button">
+                                        <div class="search-blog-p button-text">Notices</div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -63,33 +71,34 @@
                         {{-- {{$slug1}} --}}
                         @foreach ($blogs as $group_project)
                             <?php
-                                $content = $group_project->long_content;      
-                                $parts = explode('<br />', $content);    
-                                $keys = [];
-                                $result = [];
-                                foreach ($parts as $part) {
-                                    // Split each part by ":" to separate the key and value
-                                    $pair = explode('=', $part, 2);
+                                // $content = $group_project->long_content;      
+                                // $parts = explode('<br />', $content);    
+                                // $keys = [];
+                                // $result = [];
+                                // foreach ($parts as $part) {
+                                //     // Split each part by ":" to separate the key and value
+                                //     $pair = explode('=', $part, 2);
 
-                                    // Trim whitespace from the key and value
-                                    $keys[] = trim($pair[0]);
-                                    $value = isset($pair[1]) ? trim($pair[1]) : '';
-                                    $result[] = $value;    
-                                }                              
+                                //     // Trim whitespace from the key and value
+                                //     $keys[] = trim($pair[0]);
+                                //     $value = isset($pair[1]) ? trim($pair[1]) : '';
+                                //     $result[] = $value;    
+                                // }                              
                             ?>
                             <div class="mb-5 row" >
                                 <div class="item media ">
-                                    <div class="item-with-shadow media">
-                                        <div class="media-body">
+                                    <div class="item-with-shadow media" style="width:100%">
+                                        <div class="media-body" style="width:100%">
                                             <div class="meta mb-1"><span class="date">{{ \Carbon\Carbon::parse($group_project->updated_at)->format('M d, Y') }}</span></div>
                                             <h3 class="title mb-1"><a href="{{$slug1->nav_name}}/{{$group_project->nav_name}}">{{$group_project->caption ?? ""}}</a></h3>
                                             <div class="intro">{{$group_project->short_content ?? ""}}</div>
                                             <div class="small-button-blog-b">
-                                                @foreach ($keys as $index => $res)
+                                                {{-- @foreach ($keys as $index => $res)
                                                         <a href="{{$result[$index]}}">
                                                             <div class="button">{{$res}}</div>
                                                         </a>
-                                                @endforeach
+                                                @endforeach --}}
+                                                <div class="button">{{$group_project->long_content}}</div>
                                                 {{-- <div class="button">Blogs</div> --}}
                                                 <div class="separator"></div>
                                                 <div class="time">{{$group_project->icon_image_caption ?? ""}}</div>
@@ -99,6 +108,7 @@
                                         max-height: 150px;
                                         height: 97px;
                                         width: 110px;
+                                        inline-size: -webkit-fill-available;
                                     "
                                             src="{{$group_project->banner_image ?? ""}}" alt="image">
                                     </div>

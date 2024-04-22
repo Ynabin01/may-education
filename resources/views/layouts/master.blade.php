@@ -42,6 +42,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
         rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <!-- font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha384-0QBRaD9QWDmh//qgWJx0ZjjWnENSEgOr6Zyay3q9oCKoLU/OrH0d9TH9AXWswGzj" crossorigin="anonymous">
@@ -149,7 +151,7 @@
                     
                     @foreach ($menus as $menu)
                         <div class="nav-item @if ($menu->childs->count() > 0) dropdown @endif">
-                            <a href="@if($menu->nav_name=='aboutus' || $menu->nav_name=='notice' || $menu->nav_name=='notice' || $menu->nav_name=='gallery') # @elseif ($menu->nav_name=='news') /{{ $menu->nav_name }}?iam=news @else /{{ $menu->nav_name }} @endif" class="nav-link @if ($menu->childs->count() > 0 && $menu->id != '2752' && $menu->id != '2751' && $menu->id != '2756') dropdown-toggle @endif" @if ($menu->childs->count() > 0 && $menu->id != '2752' && $menu->id != '2751' && $menu->id != '2756') data-bs-toggle="dropdown" @endif>
+                            <a href="@if($menu->nav_name=='aboutus' || $menu->nav_name=='notice' || $menu->nav_name=='notice' || $menu->nav_name=='gallery') # @elseif ($menu->nav_name=='blog') /{{ $menu->nav_name }}?content=blogs @else /{{ $menu->nav_name }} @endif" class="nav-link @if ($menu->childs->count() > 0 && $menu->id != '2752' && $menu->id != '2751' && $menu->id != '2756') dropdown-toggle @endif" @if ($menu->childs->count() > 0 && $menu->id != '2752' && $menu->id != '2751' && $menu->id != '2756') data-bs-toggle="dropdown" @endif>
                                 {{ $menu->caption }}
                             </a>
                             @if ($menu->childs->count() > 0 && $menu->id != '2415' && $menu->id != '2537' && $menu->id != '2752' && $menu->id != '2751' && $menu->id != '2756')
@@ -198,7 +200,7 @@
 
     <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-3 wow fadeIn bottom-mobile-upri" data-wow-delay="0.1s"
-        style="margin-top: 3rem;     background-color: white !important;">
+        style="margin-top: 3rem;background-color: #F3F6F8 !important;">
         <div class="container py-3 ">
             <div class="row" style="align-items: center; justify-content: center;">
 
@@ -223,7 +225,7 @@
                                 <a href="gallary/photo-gallery-one"
                                     style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;"> 
                                     Photo Gallery</a>
-                                <a href="/blog"
+                                <a href="/blog?content=blogs"
                                     style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;">  
                                    Blog</a>
                                    <a href="/contact"

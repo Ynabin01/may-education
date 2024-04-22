@@ -1,6 +1,11 @@
         @extends('layouts.master')
 
         @section('content')
+        <style>
+    body{
+        background-color: white;
+    }
+</style>
         <div class="container-xxl bg-primary page-header"
         style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
         <div class="container nichha">
@@ -35,7 +40,9 @@
                     </div>
                     <!-- Normal End -->
                     <br>
-                    <div class="gallery-indicator" style="  display: flex; justify-content: center; align-items: center;">
+    {{ $photos->links('vendor.pagination.default copy') }}                       
+
+                    {{-- <div class="gallery-indicator" style="  display: flex; justify-content: center; align-items: center;">
                         <div class="gallery-indicator-item">
                             <i class="gallery-chevron fas fa-chevron-left"></i>
                         </div>
@@ -54,7 +61,7 @@
                         <div class="gallery-indicator-item">
                             <i class="gallery-chevron fas fa-chevron-right"></i>
                         </div>
-                    </div>
+                    </div> --}}
                 </main>
         </div>
             <!-- Main Content Wrapper End -->

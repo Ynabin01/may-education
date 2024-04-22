@@ -148,18 +148,19 @@
 
                 <div class="checkbox-container">
                     <div class="label apply-n">Have You Done</div>
-                    <div id="futkadu">
-                        @foreach ($have_you_done as $c)
-                        {{-- <option value="{{$c}}">{{$c}}</option> --}}
-                        <div class="agoago" style="width:120px">
-                            <label class="custom-checkbox" for="checkbox{{$loop->iteration}}">
-                                <input type="checkbox" name="have_you_done[]" value="{{$c}}" id="checkbox{{$loop->iteration}}">
-                                <span class="dot"></span> <!-- Red dot -->
-                                <span class="label-text futkau-cls">{{$c}}</span>
-                            </label>
-                        </div>
-                    @endforeach
-                    
+                    <div id="futkadu" >
+                        <div class="row">
+                            @foreach ($have_you_done as $c)
+                            {{-- <option value="{{$c}}">{{$c}}</option> --}}
+                            <div class="agoago @if ($loop->iteration % 2 == 0) col-xs-6  @endif" style="width:120px">
+                                <label class="custom-checkbox" for="checkbox{{$loop->iteration}}">
+                                    <input type="checkbox" name="have_you_done[]" value="{{$c}}" id="checkbox{{$loop->iteration}}">
+                                    <span class="dot"></span> <!-- Red dot -->
+                                    <span class="label-text futkau-cls">{{$c}}</span>
+                                </label>
+                            </div>
+                        @endforeach
+                        </div>                    
                 </div>
 
                 <div class="score apply-n">

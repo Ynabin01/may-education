@@ -1,7 +1,11 @@
 @extends("layouts.master")
 
 @section('content')
-
+<style>
+    body{
+        background-color: white;
+    }
+</style>
    <!-- breadcrumb start -->
    <div class="container-xxl bg-primary page-header"
         style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
@@ -18,10 +22,10 @@
     <!-- Normal Start -->
     <div class="container-xxl py-6">
     <div class="container">
-        <div class="n-content" style="background-color: #F3F6F8;">
+        <div class="n-content" style="background-color: #white;">
             @if (!empty($normal->main_attachment))
             <div class="manager-message" style="align-self: center;">
-                <img src="/uploads/main_attachment/{{$normal->main_attachment}}" alt="" class="manager-image" style="width: 150px; height: 150px;">
+                <img src="/uploads/main_attachment/{{$normal->main_attachment}}" alt="" class="manager-image" style="width: 150px; height: 150px;border-radius: 50%;border: 2px solid #cf1312;">
             </div>
             <br>
             @endif
