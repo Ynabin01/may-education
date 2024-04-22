@@ -1,6 +1,10 @@
 @extends("layouts.master")
 @section('content')
-
+<style>
+    body{
+        background-color: white;
+    }
+  </style>
    
 <div class="container-xxl bg-primary page-header"
         style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
@@ -24,7 +28,7 @@
                         <!-- <div class="search-blog-p input-container"> -->
                         {{-- <input type="text" class="search-blog-p input-text" placeholder="Search for News"> --}}
                         <form id="searchForm" action="{{ route('search') }}" method="GET">
-                            <input id="searchInput" type="text" name="slug" class="search-blog-p input-text" value="@if(isset($slug2)){{$slug2}}@endif" placeholder="Search for News">
+                            <input id="searchInput" type="text" name="slug" style="padding-left: 13px;font-size: 15px;"  class="search-blog-p input-text" value="@if(isset($slug2)){{$slug2}}@endif" placeholder="Search for News">
                             <input id="type" type="hidden" name="content" class="search-blog-p input-text" value="{{request()->input('content')}}" placeholder="Search for News">
                             {{-- <button type="submit">Search</button> --}}
                         </form>
@@ -42,7 +46,7 @@
                         </script>
                         
                         <!-- </div> -->
-                        <div class="search-blog-p title">Discover More</div>
+                        <div class="search-blog-p title" style="    margin-top: 15px;">Discover More</div>
                         <div class="search-blog-p button-container">
                             <div class="search-blog-p button-group">
                                 <a href="/blog?content=news">

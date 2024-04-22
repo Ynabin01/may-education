@@ -200,7 +200,7 @@
 
     <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-3 wow fadeIn bottom-mobile-upri" data-wow-delay="0.1s"
-        style="margin-top: 3rem;     background-color: white !important;">
+        style="margin-top: 3rem;background-color: #F3F6F8 !important;">
         <div class="container py-3 ">
             <div class="row" style="align-items: center; justify-content: center;">
 
@@ -225,7 +225,7 @@
                                 <a href="gallary/photo-gallery-one"
                                     style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;"> 
                                     Photo Gallery</a>
-                                <a href="/blog"
+                                <a href="/blog?content=blogs"
                                     style="text-decoration: none; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 400; line-height: 16px; display: block; margin-bottom: 4px;">  
                                    Blog</a>
                                    <a href="/contact"

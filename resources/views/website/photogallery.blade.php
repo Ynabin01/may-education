@@ -1,5 +1,10 @@
 @extends("layouts.master")
 @section('content')
+<style>
+  body{
+      background-color: white;
+  }
+</style>
 <div class="container-xxl bg-primary page-header"
         style="background-image: url('/website/img/public/xx.jpg'); background-size: cover; background-position: center;">
         <div class="container nichha">

@@ -579,7 +579,7 @@ class HomeController extends Controller
             // }
             if($subcategory_type == "Video Gallery"){
                 // return "return to page gallary";
-                $photos = NavigationItems::query()->where('navigation_id',$subcategory_id)->latest()->get();
+                $photos = NavigationItems::query()->where('navigation_id',$subcategory_id)->latest()->paginate(8);
                 return view("website.videogallery")->with(['photos'=>$photos,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);
             }
         

@@ -1,6 +1,10 @@
 @extends("layouts.master")
 @section('content')
-
+<style>
+    body{
+        background-color: white;
+    }
+</style>
 <?php
 use App\Models\NavigationItems;
 ?>
