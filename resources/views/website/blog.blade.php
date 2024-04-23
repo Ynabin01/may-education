@@ -27,11 +27,16 @@
                     <div class="search-blog-p  col" style="margin-bottom: 50px;">
                         <!-- <div class="search-blog-p input-container"> -->
                         {{-- <input type="text" class="search-blog-p input-text" placeholder="Search for News"> --}}
-                        <form id="searchForm" action="{{ route('search') }}" method="GET">
-                            <input id="searchInput" type="text" name="slug" style="padding-left: 13px;font-size: 15px;"  class="search-blog-p input-text" value="@if(isset($slug2)){{$slug2}}@endif" placeholder="Search for News">
+                        <form id="searchForm" action="{{ route('search') }}" method="GET" style="position: relative;">
+                            <div style="position: relative;">
+                                <input id="searchInput" type="text" name="slug" style="padding-left: 35px; font-size: 15px;" class="search-blog-p input-text" value="@if(isset($slug2)){{$slug2}}@endif" placeholder="Search for News">
+                                <span style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%);">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </span>
+                            </div>
                             <input id="type" type="hidden" name="content" class="search-blog-p input-text" value="{{request()->input('content')}}" placeholder="Search for News">
-                            {{-- <button type="submit">Search</button> --}}
                         </form>
+
                         
                         <script>
                             document.getElementById("searchForm").addEventListener("submit", function(event) {
