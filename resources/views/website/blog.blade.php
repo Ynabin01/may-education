@@ -30,7 +30,7 @@
                         <form id="searchForm" action="{{ route('search') }}" method="GET" style="position: relative;">
                             <div style="position: relative;">
                                 <input id="searchInput" type="text" name="slug" style="padding-left: 35px; font-size: 15px;" class="search-blog-p input-text" value="@if(isset($slug2)){{$slug2}}@endif" placeholder="Search for News">
-                                <span style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%);">
+                                <span style="position: absolute;left: 195px; top: 50%; transform: translateY(-50%);">
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </span>
                             </div>

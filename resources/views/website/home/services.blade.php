@@ -21,7 +21,7 @@
                             @break
                         @endif
                             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="service-item rounded">
+                            <div class="service-item rounded mobile-service-width">
                                 <div class="border border-dark rounded" style="padding: 10px;">
                                     <img src="{{$sub->banner_image}}" alt="Service Image" class="img-fluid mb-3">
                                     <div
