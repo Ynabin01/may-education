@@ -253,6 +253,13 @@ a{
 }
 
 @media(max-width:426px) {
+    .about-country-a{
+        margin-top: 0px;
+        padding-top: 40px;
+    }
+    .study-img{
+        width: 93% !important ;
+    }
     .footer-timing{
         margin-right: -3px !important;
     }
@@ -2434,7 +2441,7 @@ a{
 /* Media query for responsiveness */
 @media screen and (max-width: 768px) {
     .bread-container {
-        max-width: 13em;
+        /* max-width: 13em; */
         /* Adjust maximum width for smaller screens */
     }
 }
