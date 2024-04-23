@@ -33,74 +33,78 @@
 
         @if (isset($slug2->childs[1]))
 
-            <div class="header-a-page-k">
-                <div class="title">{{$slug2->childs[1]->caption}}</div>
-                <div class="description">{{$slug2->childs[1]->short_content}}</div>
-            </div>
-            
-            <div class="container know-more-about-a">
-                <div class="section know-more-about-a">
-                    <div class="row abroad-col">
-                        <div class="subsection know-more-about-a col-xs-12">
-                            @php 
-                            $listCount = count($slug2->childs[1]->childs);
-                            $middleIndex = intdiv($listCount, 2); // Calculate middle index using integer division
-                        @endphp
-                        
-                        @php $test = 0 @endphp
-                        @foreach ($slug2->childs[1]->childs as $index => $lists)
-                            <div class="sub-content know-more-about-a">
-                                <div class="sub-title know-more-about-a">{{$lists->caption}}</div>
-                                <div class="sub-paragraph know-more-about-a">{!! htmlspecialchars_decode($lists->short_content) !!}</div>
-                            </div>
-                            @if ($loop->iteration == $middleIndex + 1)
-                                @php $test++ @endphp
-                                </div>
-                                <div class="subsection know-more-about-a col-xs-12">
-                            @endif
-                        @endforeach
-                        @if ($test != 0)
-                            </div>  
-                        @endif
-                        
+            <div class="kar-dosar-color" style="background-color: rgb(243, 246, 248); margin-top: 30px; padding: 3px 0px 40px 0px;">
 
-                        {{-- <div class="sub-content know-more-about-a">
-                            <div class="sub-title know-more-about-a">Student Visa Process</div>
-                            <div class="sub-paragraph know-more-about-a">Process to obtain Australian Student Visa for
-                                international students
-                                <br />Any person who intends to undertake full-time study in a registered course in
-                                Australia needs to obtain a Australian Student Visa. A Student Visa permits the holder to
-                                travel to, enter and remain in Australia for the duration of the registered course of study.
-                                Overseas students cannot undertake part-time study in Australia and must leave Australia on
-                                completion of their course of study.
+                <div class="header-a-page-k">
+                    <div class="title">{{$slug2->childs[1]->caption}}</div>
+                    <div class="description">{{$slug2->childs[1]->short_content}}</div>
+                </div>
+                
+                <div class="container know-more-about-a">
+                    <div class="section know-more-about-a">
+                        <div class="row abroad-col">
+                            <div class="subsection know-more-about-a col-xs-12">
+                                @php 
+                                $listCount = count($slug2->childs[1]->childs);
+                                $middleIndex = intdiv($listCount, 2); // Calculate middle index using integer division
+                            @endphp
+                            
+                            @php $test = 0 @endphp
+                            @foreach ($slug2->childs[1]->childs as $index => $lists)
+                                <div class="sub-content know-more-about-a">
+                                    <div class="sub-title know-more-about-a">{{$lists->caption}}</div>
+                                    <div class="sub-paragraph know-more-about-a">{!! htmlspecialchars_decode($lists->short_content) !!}</div>
+                                </div>
+                                @if ($loop->iteration == $middleIndex + 1)
+                                    @php $test++ @endphp
+                                    </div>
+                                    <div class="subsection know-more-about-a col-xs-12">
+                                @endif
+                            @endforeach
+                            @if ($test != 0)
+                                </div>  
+                            @endif
+                            
+
+                            {{-- <div class="sub-content know-more-about-a">
+                                <div class="sub-title know-more-about-a">Student Visa Process</div>
+                                <div class="sub-paragraph know-more-about-a">Process to obtain Australian Student Visa for
+                                    international students
+                                    <br />Any person who intends to undertake full-time study in a registered course in
+                                    Australia needs to obtain a Australian Student Visa. A Student Visa permits the holder to
+                                    travel to, enter and remain in Australia for the duration of the registered course of study.
+                                    Overseas students cannot undertake part-time study in Australia and must leave Australia on
+                                    completion of their course of study.
+                                </div>
                             </div>
-                        </div>
-                        <div class="sub-content know-more-about-a">
-                            <div class="sub-title know-more-about-a">Processing Times</div>
-                            <div class="sub-paragraph know-more-about-a">Student applicants should lodge applications no
-                                more than 3 months and at least 8 weeks before course commencement dates. Some applications
-                                take longer to process. Students may be asked to undertake further medicals and some delays
-                                may be experienced due to the need to verify bank or education documents. Nepalese and
-                                Bhutanese applicants need to take into account the time taken for documents and letters to
-                                be sent and received by the Visa Office.
-                                <br />To be granted a student visa you will need
+                            <div class="sub-content know-more-about-a">
+                                <div class="sub-title know-more-about-a">Processing Times</div>
+                                <div class="sub-paragraph know-more-about-a">Student applicants should lodge applications no
+                                    more than 3 months and at least 8 weeks before course commencement dates. Some applications
+                                    take longer to process. Students may be asked to undertake further medicals and some delays
+                                    may be experienced due to the need to verify bank or education documents. Nepalese and
+                                    Bhutanese applicants need to take into account the time taken for documents and letters to
+                                    be sent and received by the Visa Office.
+                                    <br />To be granted a student visa you will need
+                                </div>
+                            </div> --}}
+                        {{-- </div>
+                        <div class="subsection know-more-about-a">
+                            <div class="sub-content know-more-about-a">
+                                <div class="sub-title know-more-about-a">Student Visa Processing</div>
+                                <div class="sub-paragraph know-more-about-a">Student visa applicants from India, Nepal and
+                                    Bhutan are required to undergo a Pre-Visa Assessment (PVA).</div>
+                            </div>
+                            <div class="sub-content know-more-about-a">
+                                <div class="sub-title know-more-about-a">Application</div>
+                                <div class="sub-paragraph know-more-about-a">Persons wishing to study in Australia should apply
+                                    on form 157A and pay the current visa application charge.</div>
                             </div>
                         </div> --}}
-                    {{-- </div>
-                    <div class="subsection know-more-about-a">
-                        <div class="sub-content know-more-about-a">
-                            <div class="sub-title know-more-about-a">Student Visa Processing</div>
-                            <div class="sub-paragraph know-more-about-a">Student visa applicants from India, Nepal and
-                                Bhutan are required to undergo a Pre-Visa Assessment (PVA).</div>
                         </div>
-                        <div class="sub-content know-more-about-a">
-                            <div class="sub-title know-more-about-a">Application</div>
-                            <div class="sub-paragraph know-more-about-a">Persons wishing to study in Australia should apply
-                                on form 157A and pay the current visa application charge.</div>
-                        </div>
-                    </div> --}}
                     </div>
                 </div>
+
             </div>
         @endif
 

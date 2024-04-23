@@ -115,6 +115,10 @@ a{
     .test-con{
         max-width: 1080px !important;
     }
+    .about-country-a {
+        gap: 60px !important;
+        margin-left: 8% !important;
+    }
 
 }
 
