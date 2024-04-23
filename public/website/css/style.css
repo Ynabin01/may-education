@@ -139,7 +139,7 @@ a{
 
 @media (min-width:375px) and (max-width:425px) {
     .custom-images-container {
-        margin-left: -32px !important;
+        margin-left: -43px !important;
     }
 
     .unique-statistics {
@@ -234,7 +234,10 @@ a{
 
 @media(max-width:321px){
     .chota-size{
-        font-size: 12px;
+        font-size: 10px;
+    }
+    .custom-images-container {
+        margin-left: -32px !important;
     }
 }
 .row-gallery-section .column{
@@ -262,7 +265,7 @@ a{
         margin-top: 0 !important;
     }
     .custom-images-container {
-        margin-left: -24px !important;
+        margin-left: -24px ;
     }
     .do-gray{
         padding-bottom: 0 !important;
@@ -1412,7 +1415,7 @@ a{
         /* Adjust the maximum width as needed */
         margin: 0 auto;
         /* Center the container horizontally */
-        margin-left: -32px;
+        margin-left: -45px;
     }
 }
 
