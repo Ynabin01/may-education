@@ -253,6 +253,13 @@ a{
 }
 
 @media(max-width:426px) {
+    .right-kani{
+        margin-left: 20px;
+        margin-top: 60px !important;
+    }
+    .studyk-mobile-me{
+        font-size: 18px !important;
+    }
     .about-country-a{
         margin-top: 0px !important;
         padding-top: 40px;
