@@ -118,7 +118,7 @@
      <!--  end .container -->
     <!-- Navbar & Hero Start -->
     <div class="container-xxl position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-0"
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-0 upri-navbar"
             style="background-color: rgba(207, 19, 18, 1); height: 60px;">
             <a href="index.html" class="image-hder navbar-brand d-flex justify-content-center align-items-center p-0"
                 style="height: 100%; width: 160px; margin-left: 60px;">

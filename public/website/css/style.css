@@ -88,7 +88,15 @@ a{
         width: 100%;
         height: auto;
     }
-
+    .upri-navbar{
+        padding: 0 !important;
+    }
+    .image-hder{
+        margin-left: 30px;
+    }
+    .navbar .navbar-nav .nav-link {
+        margin-left: 10px !important
+    }
 }
 
 @media (min-width:1400px) {
