@@ -254,7 +254,7 @@ a{
 
 @media(max-width:426px) {
     .about-country-a{
-        margin-top: 0px;
+        margin-top: 0px !important;
         padding-top: 40px;
     }
     .study-img{
