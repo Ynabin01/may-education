@@ -274,6 +274,12 @@ a{
 }
 
 @media(max-width:426px) {
+    .blog-details-read-more-link {
+        font-size: 12px !important;
+    }
+    .blog-details-title {
+        font-size: 11px !important;
+    }
     .right-kani{
         margin-left: 17px !important;
         margin-top: 60px !important;

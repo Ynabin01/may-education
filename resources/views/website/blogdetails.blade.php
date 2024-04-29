@@ -97,7 +97,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-md-10">
                         <div class="n-content" style="background-color: #F3F6F8;">
                             <div class="blog-details-container">
                                 @foreach ($slug1->childs->sortByDesc('updated_at') as $group_project)
