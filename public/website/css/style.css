@@ -2957,6 +2957,7 @@ a{
     font-weight: 400;
     line-height: 12px;
     word-wrap: break-word;
+    margin-top: -4px;
 }
 
 .small-button-blog-b .separator {
