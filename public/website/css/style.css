@@ -172,7 +172,7 @@ a{
 @media(max-width:768px) {
     .page-header{
         margin-top: -42px;
-        height: 185px;
+        /* height: 185px; */
     }
     .nichha{
         padding-top: 24px;
@@ -248,7 +248,20 @@ a{
     }
 }
 
+@media(min-width:321.1px) and (max-width:765px){
+    .b-title {
+        font-size: 25px !important;
+        line-height: 40.4px !important;
+        padding-bottom: 10px;
+    }
+}
+
 @media(max-width:321px){
+    .b-title {
+        font-size: 21px !important;
+        line-height: 35.4px !important;
+        padding-bottom: 10px;
+    }
     .chota-size{
         font-size: 10px;
     }
