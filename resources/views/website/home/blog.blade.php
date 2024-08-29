@@ -12,8 +12,8 @@
                         {{-- {{$blog}} --}}
 
                         <div class="blog-gallery-item" style="height: 300px !important;">
-                            <img src="{{$blog->banner_image ?? ""}}" alt="">
-                            <div class="blog-gallery-info">
+                            <a href="{{$blogs->nav_name}}/{{$blog->nav_name}}"><img src="{{$blog->banner_image ?? ""}}" alt=""></a>
+                            <div class="blog-gallery-info" style="background-color: rgba(0, 0, 0, 0.5);">
                                 <div
                                     style="width: 100%; color: white; font-size: 10px; font-family: Poppins; font-weight: 300; text-transform: uppercase; line-height: 18px; letter-spacing: 1.20px; word-wrap: break-word">
                                     {{$blog->page_description ?? ""}}</div>
@@ -91,7 +91,7 @@
                 </div>
                 <br>
                 <div class="unique-button" style="background-color:#CF1312; height: 40px; width: 100px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
-                    <a href="/blog" class="unique-learn-more" style="color: white;">View All</a>
+                    <a href="/blog?content=blogs" class="unique-learn-more" style="color: white;">View All</a>
                     <div class="unique-icon" style="color: white;">&rarr;</div>
                 </div>
             </div>

@@ -72,7 +72,7 @@
 </head>
 
 <body>
-        <div class="container">
+        <div class="container" style="margin-bottom: 7px; margin-top: 7px;">
             <div class="row">
                 <div class="col-md-6 col-sm-12 for-small">
                     <p style="margin-top: 10px; margin-bottom: 10px;" class="chota-size">
@@ -107,9 +107,9 @@
                     </div>
                     <div class="nav-item dropdown" style="display: inline-block;">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                            style="color: black; margin-left: -18px;">Tinkune Office</a>
+                            style="color: black; margin-left: -18px;">Putalisadak Office</a>
                         <div class="dropdown-menu m-0" style="min-width: 100px;"> <!-- Adjust min-width as needed -->
-                            <a href="#" class="dropdown-item" style="color: black;">Koteshwor Office</a>
+                            <!--<a href="#" class="dropdown-item" style="color: black;">Koteshwor Office</a>-->
                         </div>
                     </div>
                 </div>
@@ -308,20 +308,25 @@
                     <div
                         style="margin-bottom: 5px; max-width: none; width: 100%; color: #212529; font-size: 12px; font-family: Montserrat; font-weight: 600; line-height: 15px; word-wrap: break-word">
                         Map Location</div>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.71405272388!2d-0.2416810400390625!3d51.52855824899365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ebe4c763df%3A0x6c767c9547c0e8b8!2sLondon%2C%20UK!5e0!3m2!1sen!2sus!4v1646985121551!5m2!1sen!2sus"
-                        width="100%" height="130" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3532.3942056562987!2d85.3201231!3d27.7051125!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198d7621f5a5%3A0x88917f68e8f540c4!2sMay%20Education%20Consultancy!5e0!3m2!1sen!2snp!4v1724823337286!5m2!1sen!2snp" width="100%" height="130" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-md-0 col-lg-1">
                 </div>
             </div>
         </div>
     </div>
+        <!--<div class="container-fluid bg-dark text-light d-footer pt-3 wow fadeIn" data-wow-delay="0.1s">-->
+        <!--    <p>-->
+        <!--        ©2014-2020 May Education Consultancy. All rights reserved-->
+        <!--    </p>-->
+        <!--</div>-->
         <div class="container-fluid bg-dark text-light d-footer pt-3 wow fadeIn" data-wow-delay="0.1s">
-            <p>
-                ©2014-2020 May Education Consultancy. All rights reserved
-            </p>
-        </div>
+    <p style="font-size: 12px;">
+        ©2014-2020 May Education Consultancy. All rights reserved / Developed by 
+        <a href="https://bhasika.com/" style="color: #000;">Bhashika</a>.
+    </p>
+</div>
+
         <!-- Footer End -->
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
